@@ -1,0 +1,113 @@
+"*****************************************************************************
+"" Plug Load
+"*****************************************************************************
+call plug#begin('~/.vim/plugged')
+
+" Autocomplete
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+
+" Syntax checking
+Plug 'scrooloose/syntastic'
+
+" colorscheme collection
+Plug 'flazz/vim-colorschemes'
+
+" snippetes
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+call plug#end()
+
+"*****************************************************************************
+"" Basic setup
+"*****************************************************************************
+
+" Unleash all VIM power (break vi compatibility)
+set nocompatible
+
+" search settings
+set hlsearch          " highlight search results
+set incsearch        " Makes search act like search in modern browsers
+set ignorecase      " Ignore case when searching
+set smartcase       " When searching try to be smart about cases 
+
+"*****************************************************************************
+"" Mapping
+"*****************************************************************************
+
+"  map ç key in ABNT keyboard to replace key in same position in us keyboard
+nmap ç ;
+nmap Ç :
+
+
+"*****************************************************************************
+"" Visual Settings
+"*****************************************************************************
+
+" enable syntax highlighting
+syntax on
+
+" show absolute line numbers
+set number
+
+" show the matching part of the pair for [] {} and ()
+set showmatch
+
+" 'show' buffer on terminal title
+set title
+
+" highlight column
+set colorcolumn=79
+
+" color scheme
+set background=dark
+set t_Co=256
+colorscheme molokai
+
+"*****************************************************************************
+"" Python basic settings
+"*****************************************************************************
+
+" .py file configs
+au BufNewFile,BufRead *.py
+    \ set tabstop=4             " set tabs to have 4 spaces
+    \ set softtabstop=4
+    \ set shiftwidth=4          " when using the >> or << commands, shift lines by 4 spaces
+    \ set textwidth=79
+    \ set expandtab            " expand tabs into spaces
+    \ set autoindent            " indent when moving to the next line while writing code
+    \ set fileformat=unix
+
+" enable all Python syntax highlighting features
+let python_highlight_all = 1
+
+"*****************************************************************************
+"" Plugin Settings
+"*****************************************************************************
+
+" YouCompleteMe
+let g:ycm_python_binary_path = 'python'
+let g:ycm_autoclose_preview_window_after_insertion=1
+let g:ycm_seed_identifiers_with_syntax =1
+let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<S-TAB>', '<Up>']
+
+" ultisnips
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsEditSplit="vertical"
+
+" syntastic (recommended settings for beginners)
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_loc_list_height = 5
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_python_checkers=['python', 'flake8']
