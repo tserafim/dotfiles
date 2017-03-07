@@ -16,6 +16,9 @@ Plug 'flazz/vim-colorschemes'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
+" tagbar
+Plug 'majutsushi/tagbar'
+
 call plug#end()
 
 "*****************************************************************************
@@ -111,3 +114,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_python_checkers=['python', 'flake8']
+
+" tagbar
+nmap <F8> :TagbarToggle<CR>
+let g:tagbar_autofocus = 1 " move cursor to Tagbar when it opens
