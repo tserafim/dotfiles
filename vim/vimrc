@@ -34,14 +34,38 @@ set incsearch        " Makes search act like search in modern browsers
 set ignorecase      " Ignore case when searching
 set smartcase       " When searching try to be smart about cases 
 
+
+" Enable hidden buffers
+set hidden
+
 "*****************************************************************************
 "" Mapping
 "*****************************************************************************
+
+" map leader to <space>
+" nnoremap <Space> <Nop>
+let mapleader = "\<Space>"
+
+" Clean search (highlight)
+noremap <leader>\ :noh<CR>
 
 "  map ç key in ABNT keyboard to replace key in same position in us keyboard
 nmap ç ;
 nmap Ç :
 
+
+"" Split
+noremap <Leader>h :<C-u>split<CR>
+noremap <Leader>v :<C-u>vsplit<CR>
+
+"" Close buffer
+noremap <leader>c :bd<CR>
+
+"" Switching windows
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+noremap <C-h> <C-w>h
 
 "*****************************************************************************
 "" Visual Settings
@@ -116,5 +140,5 @@ let g:syntastic_aggregate_errors = 1
 let g:syntastic_python_checkers=['python', 'flake8']
 
 " tagbar
-nmap <F8> :TagbarToggle<CR>
+nmap <silent> <F4> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1 " move cursor to Tagbar when it opens
