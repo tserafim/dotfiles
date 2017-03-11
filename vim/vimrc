@@ -88,7 +88,6 @@ set colorcolumn=79
 
 " color scheme
 set background=dark
-set t_Co=256
 colorscheme molokai
 
 "*****************************************************************************

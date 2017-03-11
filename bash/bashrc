@@ -39,6 +39,11 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
+# http://stackoverflow.com/questions/19327836/why-am-i-seeing-only-8-colors-in-terminal-xfce-terminal
+if [ "$COLORTERM" == "xfce4-terminal" ] ; then
+    export TERM=xterm-256color
+fi
+
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
@@ -166,3 +171,5 @@ export HISTCONTROL=ignoredups
 alias l.='ls -d .* --color=auto'
 alias vi='vim'
 
+# vi mode in bash
+set -o vi
