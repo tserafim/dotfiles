@@ -9,15 +9,21 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 " Syntax checking
 Plug 'scrooloose/syntastic'
 
-" colorscheme collection
-Plug 'flazz/vim-colorschemes'
-
 " snippetes
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " tagbar
 Plug 'majutsushi/tagbar'
+
+" colorschemes
+Plug 'tomasr/molokai'
+Plug 'chriskempson/base16-vim'
+Plug 'notpratheek/vim-luna'
+
+" airline = light powerlight
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
@@ -141,3 +147,19 @@ let g:syntastic_python_checkers=['python', 'flake8']
 " tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1 " move cursor to Tagbar when it opens
+
+" vim-airline
+let g:airline_theme = 'murmur'
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+
+let g:airline#extensions#ycm#enabled = 1
+let g:airline#extensions#ycm#error_symbol = 'E:'
+let g:airline#extensions#ycm#warning_symbol = 'W:'
+
+let g:airline#extensions#syntastic#enabled = 1
+
+let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#tagbar#flags = ''
