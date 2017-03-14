@@ -170,6 +170,3 @@ export HISTCONTROL=ignoredups
 # Add some helpful aliases
 alias l.='ls -d .* --color=auto'
 alias vi='vim'
-
-# vi mode in bash
-set -o vi

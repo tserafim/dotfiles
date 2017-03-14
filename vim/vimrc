@@ -1,4 +1,13 @@
 "*****************************************************************************
+" vim basics based on vim-sensible, idiomatic-vim
+" https://github.com/tpope/vim-sensible
+" https://github.com/romainl/idiomatic-vimrc
+"
+" vim superpowers based on vim-bootstrap
+" https://github.com/avelino/vim-bootstrap
+"*****************************************************************************
+
+"*****************************************************************************
 "" Plug Load
 "*****************************************************************************
 call plug#begin('~/.vim/plugged')
@@ -26,6 +35,89 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
+
+if has('autocmd')
+  filetype plugin indent on
+endif
+
+"*****************************************************************************
+"" Sensible settings - organize later according to idiomatic-vimrc
+"" https://github.com/romainl/idiomatic-vimrc
+"*****************************************************************************
+
+set autoindent " Minimal automatic indenting for any filetype
+set backspace=indent,eol,start " Proper backspace behavior
+set complete-=i " https://github.com/tpope/vim-sensible/issues/51
+set smarttab
+
+set nrformats-=octal
+
+set ttimeout        " timeout on key codes
+set ttimeoutlen=100
+
+" Use <C-L> to clear the highlighting of :set hlsearch.
+if maparg('<C-L>', 'n') ==# ''
+  nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+endif
+
+set laststatus=2 " last windows will always have status line
+set ruler " Shows the current line number at the bottom right of the screen
+set wildmenu " Command-line completion
+
+if !&scrolloff
+  set scrolloff=1 " minimum number of lines to show above/below cursor
+endif
+if !&sidescrolloff
+  set sidescrolloff=5 " minimum number of lines to show to the right/left of cursor
+endif
+set display+=lastline " as much as possible of the last line will be displayed
+
+if &encoding ==# 'latin1' && has('gui_running')
+  set encoding=utf-8
+endif
+
+if &listchars ==# 'eol:$'
+  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+endif
+
+if v:version > 703 || v:version == 703 && has("patch541")
+  set formatoptions+=j " Delete comment character when joining commented lines
+endif
+
+if has('path_extra')
+  setglobal tags-=./tags tags-=./tags; tags^=./tags;
+endif
+
+if &shell =~# 'fish$' && (v:version < 704 || v:version == 704 && !has('patch276'))
+  set shell=/bin/bash
+endif
+
+set autoread " automatically read file changed outside of vim
+
+if &history < 1000
+  set history=1000
+endif
+if &tabpagemax < 50
+  set tabpagemax=50
+endif
+if !empty(&viminfo)
+  set viminfo^=!
+endif
+set sessionoptions-=options
+
+" Allow color schemes to do bright colors without forcing bold.
+if &t_Co == 8 && $TERM !~# '^linux\|^Eterm'
+  set t_Co=16
+endif
+
+" Load matchit.vim, but only if the user hasn't installed a newer version.
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  runtime! macros/matchit.vim
+endif
+
+inoremap <C-U> <C-G>u<C-U>
+
+" vim:set ft=vim et sw=2:
 
 "*****************************************************************************
 "" Basic setup
@@ -56,8 +148,8 @@ let mapleader = "\<Space>"
 noremap <leader>\ :noh<CR>
 
 "  map ç key in ABNT keyboard to replace key in same position in us keyboard
-nmap ç ;
-nmap Ç :
+nnoremap ç ;
+nnoremap Ç :
 
 
 "" Split
@@ -78,7 +170,9 @@ noremap <C-h> <C-w>h
 "*****************************************************************************
 
 " enable syntax highlighting
-syntax on
+if has('syntax') && !exists('g:syntax_on')
+  syntax enable
+endif
 
 " show absolute line numbers
 set number
@@ -107,7 +201,6 @@ au BufNewFile,BufRead *.py
     \ set shiftwidth=4          " when using the >> or << commands, shift lines by 4 spaces
     \ set textwidth=79
     \ set expandtab            " expand tabs into spaces
-    \ set autoindent            " indent when moving to the next line while writing code
     \ set fileformat=unix
 
 " enable all Python syntax highlighting features
