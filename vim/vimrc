@@ -29,6 +29,7 @@ Plug 'majutsushi/tagbar'
 Plug 'tomasr/molokai'
 Plug 'chriskempson/base16-vim'
 Plug 'notpratheek/vim-luna'
+Plug 'hhff/SpacegrayEighties.vim'
 
 " airline = light powerlight
 Plug 'vim-airline/vim-airline'
@@ -206,7 +207,7 @@ set colorcolumn=79
 
 " color scheme
 set background=dark
-colorscheme molokai
+colorscheme SpacegrayEighties
 
 "*****************************************************************************
 "" Python basic settings

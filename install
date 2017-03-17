@@ -4,6 +4,7 @@ link_profile() {
 	ln -s "$dotfilesRepoDirectory/bash/bashrc" $HOME/.bashrc
 	ln -s "$dotfilesRepoDirectory/bash/bash_prompt" $HOME/.bash_prompt
 	ln -s "$dotfilesRepoDirectory/git/gitconfig" $HOME/.gitconfig
+	ln -s "$dotfilesRepoDirectory/git/gitignore" $HOME/.gitignore
 	ln -s "$dotfilesRepoDirectory/vim/vimrc" $HOME/.vimrc
 }
 echo 'Linking dot file'

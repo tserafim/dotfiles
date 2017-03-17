@@ -3,3 +3,4 @@
 	email = thiago.serafim@gmail.com
 [core]
 	editor = vim
+	excludesfile = ~/.gitignore
