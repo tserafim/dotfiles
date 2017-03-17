@@ -34,6 +34,9 @@ Plug 'notpratheek/vim-luna'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" vim-autoformat
+Plug 'Chiel92/vim-autoformat'
+
 call plug#end()
 
 if has('autocmd')
@@ -136,6 +139,12 @@ set smartcase       " When searching try to be smart about cases
 " Enable hidden buffers
 set hidden
 
+" Tabs. May be overwritten by autocmd rules
+set tabstop=4
+set softtabstop=0
+set shiftwidth=4
+set expandtab
+
 "*****************************************************************************
 "" Mapping
 "*****************************************************************************
@@ -159,11 +168,20 @@ noremap <Leader>v :<C-u>vsplit<CR>
 "" Close buffer
 noremap <leader>c :bd<CR>
 
+"" Buffer nav
+noremap <leader>z :bp<CR>
+noremap <leader>q :bp<CR>
+noremap <leader>x :bn<CR>
+noremap <leader>w :bn<CR>
+
 "" Switching windows
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <C-h> <C-w>h
+
+" Save file
+nnoremap <leader>w :w<CR>
 
 "*****************************************************************************
 "" Visual Settings
@@ -207,6 +225,16 @@ au BufNewFile,BufRead *.py
 let python_highlight_all = 1
 
 "*****************************************************************************
+"" HTML  basic settings
+"*****************************************************************************
+
+" .html file configs
+au BufNewFile,BufRead *.html
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
+
+"*****************************************************************************
 "" Plugin Settings
 "*****************************************************************************
 
@@ -216,6 +244,9 @@ let g:ycm_autoclose_preview_window_after_insertion=1
 let g:ycm_seed_identifiers_with_syntax =1
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<S-TAB>', '<Up>']
+
+map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+map <leader>d :YcmCompleter GetDoc<CR>
 
 " ultisnips
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
@@ -236,6 +267,11 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_python_checkers=['python', 'flake8']
+
+" vim-autoformat
+let g:formatters_python= ['yapf']
+
+noremap <leader>y :Autoformat<CR>
 
 " tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
