@@ -146,6 +146,13 @@ set softtabstop=0
 set shiftwidth=4
 set expandtab
 
+" Visit links below for more info on clipboard and vim
+" http://vimcasts.org/episodes/accessing-the-system-clipboard-from-vim/
+" http://vi.stackexchange.com/questions/84/how-can-i-copy-text-to-the-system-clipboard-from-vim
+if has('unnamedplus')
+  set clipboard=unnamed,unnamedplus
+endif
+
 "*****************************************************************************
 "" Mapping
 "*****************************************************************************
@@ -182,7 +189,7 @@ noremap <C-l> <C-w>l
 noremap <C-h> <C-w>h
 
 " Save file
-nnoremap <leader>w :w<CR>
+nnoremap <leader>s :w<CR>
 
 "*****************************************************************************
 "" Visual Settings
@@ -209,18 +216,30 @@ set colorcolumn=79
 set background=dark
 colorscheme SpacegrayEighties
 
+" guioptions
+" http://vimdoc.sourceforge.net/htmldoc/options.html#'guioptions'
+" default is: guioptions=agimrLtT
+set guioptions=agimt
+
+" font settings
+if has('gui_running')
+  if has('gui_gtk2')
+    set guifont=Ubuntu\ Mono\ 12
+  endif
+endif
+
 "*****************************************************************************
 "" Python basic settings
 "*****************************************************************************
 
 " .py file configs
-au BufNewFile,BufRead *.py
-    \ set tabstop=4             " set tabs to have 4 spaces
-    \ set softtabstop=4
-    \ set shiftwidth=4          " when using the >> or << commands, shift lines by 4 spaces
-    \ set textwidth=79
-    \ set expandtab            " expand tabs into spaces
-    \ set fileformat=unix
+autocmd Filetype python setlocal
+    \ tabstop=4             " set tabs to have 4 spaces
+    \ softtabstop=4
+    \ shiftwidth=4          " when using the >> or << commands, shift lines by 4 spaces
+    \ textwidth=79
+    \ expandtab            " expand tabs into spaces
+    \ fileformat=unix
 
 " enable all Python syntax highlighting features
 let python_highlight_all = 1
@@ -230,10 +249,7 @@ let python_highlight_all = 1
 "*****************************************************************************
 
 " .html file configs
-au BufNewFile,BufRead *.html
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
+autocmd Filetype html setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
 "*****************************************************************************
 "" Plugin Settings
