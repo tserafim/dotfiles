@@ -15,6 +15,9 @@ call plug#begin('~/.vim/plugged')
 " Autocomplete
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
+" ctrlp
+Plug 'ctrlpvim/ctrlp.vim'
+
 " Syntax checking
 Plug 'scrooloose/syntastic'
 
@@ -153,6 +156,7 @@ if has('unnamedplus')
   set clipboard=unnamed,unnamedplus
 endif
 
+set wildignore=*.pyc
 "*****************************************************************************
 "" Mapping
 "*****************************************************************************
@@ -214,7 +218,10 @@ set colorcolumn=79
 
 " color scheme
 set background=dark
-colorscheme SpacegrayEighties
+" colorscheme SpacegrayEighties
+colorscheme base16-flat
+" colorscheme base16-materia
+" colorscheme base16-monokai
 
 " guioptions
 " http://vimdoc.sourceforge.net/htmldoc/options.html#'guioptions'
@@ -252,8 +259,19 @@ let python_highlight_all = 1
 autocmd Filetype html setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
 "*****************************************************************************
+"" vim  basic settings
+"*****************************************************************************
+
+" .vimrc file configs
+autocmd Filetype vim setlocal tabstop=2 softtabstop=2 shiftwidth=2
+
+"*****************************************************************************
 "" Plugin Settings
 "*****************************************************************************
+
+" ctrlp
+let g:ctrlp_map= '<c-p>'
+let g:ctrlp_cmd='CtrlP'
 
 " YouCompleteMe
 let g:ycm_python_binary_path = 'python'
@@ -295,7 +313,7 @@ nmap <silent> <F4> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1 " move cursor to Tagbar when it opens
 
 " vim-airline
-let g:airline_theme = 'murmur'
+let g:airline_theme = 'base16_flat'
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
