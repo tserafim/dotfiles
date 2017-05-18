@@ -9,7 +9,7 @@
 
 - name: install dropbox
   dnf:
-    - name: nautilus-dropbox
-    - state: present  
+    name: nautilus-dropbox
+    state: present  
   become: True
 
