@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  connection: local
+  vars:
+    user: "serafim"
+  user: "{{ user }}" 
+  roles:
+    - fedora
+    - { role: cmprescott.chrome, become: yes }
+    - dropbox
+    - vim
+    - virtualbox
+    - wine
+    - dotfiles

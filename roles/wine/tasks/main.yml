@@ -1,0 +1,6 @@
+---
+- name: install wine
+  dnf:
+    name: wine
+    state: present
+  become: True

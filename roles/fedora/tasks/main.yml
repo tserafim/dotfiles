@@ -1,0 +1,16 @@
+---
+- name: upgrade fedora
+  dnf:
+    name: "*"
+    state: latest
+  become: True
+
+- name: install fedora packages
+  dnf:
+    name:
+      - git
+      - gnome-tweak-tool
+      - libselinux-python # needed for some ansible roles
+      - nautilus-dropbox
+    state: present
+  become: True

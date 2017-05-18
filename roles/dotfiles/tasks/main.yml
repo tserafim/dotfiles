@@ -1,0 +1,10 @@
+---
+- name: symlink dot files in files folder
+  file:
+    src: "{{ role_path }}/files/{{ item }}"
+    dest: ~/{{ item }}
+    state: link
+  with_items:
+    - .gitignore
+    - .gitconfig
+      #- .vimrc

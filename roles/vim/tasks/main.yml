@@ -1,0 +1,39 @@
+---
+- name: remove vim-tiny
+  apt:
+    name: vim-tiny
+    state: absent
+  when: ansible_distribution == 'Ubuntu'
+  become: True
+
+- name: install vim on Ubuntu
+  apt:
+    name: vim-gtk
+    state: present
+  become: True
+  when: ansible_distribution == 'Ubuntu'
+
+- name: install vim on Fedora
+  dnf:
+    name:
+      - vim-X11
+      - vim-enhanced  
+    state: present
+  become: True
+  when: ansible_distribution == 'Fedora'
+
+
+# download and install vim-plug
+# https://github.com/junegunn/vim-plug
+- name: ensure ~/.vim/autoload exists
+  file:
+    path: ~/.vim/autoload
+    state: directory
+
+- name: download vim-plug
+  get_url:
+    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    dest: ~/.vim/autoload/plug.vim
+
+    #- name: install vim-plug
+    #command: vim +PlugInstall +qall
