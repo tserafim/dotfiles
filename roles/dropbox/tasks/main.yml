@@ -1,0 +1,15 @@
+---
+- name: add repo
+  yum_repository:
+    name: dropbox
+    description: Dropbox repository
+    baseurl: http://linux.dropbox.com/fedora/$releasever/
+    gpgkey: http://linux.dropbox.com/fedora/rpm-public-key.asc
+  become: True
+
+- name: install dropbox
+  dnf:
+    - name: nautilus-dropbox
+    - state: present  
+  become: True
+

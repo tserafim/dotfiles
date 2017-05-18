@@ -11,7 +11,7 @@ Install
 
     If git is installed:
 
-    	$ cd ~ && git clone https://github.com/tserafim/dotfiles.git .dotfiles
+        $ cd ~ && git clone --recursive https://github.com/tserafim/dotfiles.git .dotfiles
 
         $ cd .dotfiles
 
