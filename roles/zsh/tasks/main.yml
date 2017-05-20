@@ -19,4 +19,8 @@
     shell: /bin/zsh
   become: True
 
-
+- name: clone powerlevel9k theme
+# https://github.com/bhilburn/powerlevel9k
+  git:
+    repo: https://github.com/bhilburn/powerlevel9k.git
+    dest: ~/.oh-my-zsh/custom/themes/powerlevel9k
