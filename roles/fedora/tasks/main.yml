@@ -11,5 +11,6 @@
       - git
       - gnome-tweak-tool
       - libselinux-python # needed for some ansible roles
+      - powerline
     state: present
   become: True
