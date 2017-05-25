@@ -8,4 +8,5 @@
     - .gitignore
     - .gitconfig
     - .zshrc
+    - .zshenv
       #- .vimrc

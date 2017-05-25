@@ -1,0 +1,35 @@
+---
+# https://github.com/pyenv/pyenv
+- name: clone pyenv
+  git:
+    repo: https://github.com/pyenv/pyenv.git
+    dest: ~/.pyenv
+    update: no
+
+- name: clone pyenv-virtualenv
+  git:
+    repo: https://github.com/pyenv/pyenv-virtualenv.git
+    dest: ~/.pyenv/plugins/pyenv-virtualenv
+    update: no
+
+- name: clone pyenv-virtualenvwrapper
+  git:
+    repo: https://github.com/pyenv/pyenv-virtualenvwrapper.git
+    dest: ~/.pyenv/plugins/pyenv-virtualenvwrapper
+    update: no
+
+- name: install system dependencies to build python
+  dnf:
+    name:
+      - gcc
+      - zlib-devel
+      - bzip2
+      - bzip2-devel
+      - readline-devel
+      - sqlite
+      - sqlite-devel
+      - openssl-devel
+      - tk-devel
+      - xz
+    state: present
+  become: True
