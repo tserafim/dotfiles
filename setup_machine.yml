@@ -3,6 +3,9 @@
   connection: local
   vars:
     user: "serafim"
+  environment:
+    http_proxy: http://user:password@server:port
+    https_proxy: http://user:password@server:port
   user: "{{ user }}" 
   roles:
     - fedora
@@ -12,4 +15,5 @@
     - virtualbox
     - wine
     - zsh
+    - pyenv
     - dotfiles
