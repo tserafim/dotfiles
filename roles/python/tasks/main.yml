@@ -1,0 +1,8 @@
+---
+- name: install python versions and environment tools
+  dnf:
+    name:
+      - python36
+      - virtualenvwrapper
+    state: present
+  become: True

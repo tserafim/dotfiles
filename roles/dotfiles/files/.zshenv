@@ -2,9 +2,5 @@
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/workspace
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-export PYENV_VIRTUALENVWRAPPER_PREFER_PYENV="true"
-pyenv virtualenvwrapper
-
+# environment variables specific to machine, should be in $ZDOTDIR/.zprofile, which is sourced after this file
+# example: machine has a different PROJECT_HOME
