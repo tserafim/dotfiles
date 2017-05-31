@@ -15,5 +15,5 @@
     - virtualbox
     - wine
     - zsh
-    - pyenv
+    - python
     - dotfiles

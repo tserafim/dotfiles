@@ -3,6 +3,6 @@
   dnf:
     name:
       - python36
-      - virtualenvwrapper
+      - python3-virtualenvwrapper
     state: present
   become: True
