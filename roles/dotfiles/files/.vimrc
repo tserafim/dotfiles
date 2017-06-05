@@ -16,7 +16,7 @@ call plug#begin('~/.vim/plugged')
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 " ctrlp
-" Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
 " Syntax checking
 " Plug 'scrooloose/syntastic'
@@ -29,10 +29,9 @@ call plug#begin('~/.vim/plugged')
 " Plug 'majutsushi/tagbar'
 
 " colorschemes
-" Plug 'tomasr/molokai'
-" Plug 'chriskempson/base16-vim'
-" Plug 'notpratheek/vim-luna'
-" Plug 'hhff/SpacegrayEighties.vim'
+Plug 'tomasr/molokai'
+Plug 'chriskempson/base16-vim'
+Plug 'notpratheek/vim-luna'
 
 " airline = light powerlight
 " Plug 'vim-airline/vim-airline'
@@ -80,12 +79,10 @@ set ignorecase      " Ignore case when searching
 set smartcase       " Do not ignorecase if search pattern has uppercase letter
 
 " Tabs. May be overwritten by autocmd rules
-" set tabstop=4
-" set softtabstop=0
-" set shiftwidth=4
-" set expandtab
-set smarttab
-set autoindent " Minimal automatic indenting for any filetype
+set expandtab " when tab is pressed, insert spaces
+set tabstop=4 " when tab is pressed, move this amount
+set shiftwidth=4 " when indenting with '>', move this amount
+set autoindent " new line inherits the indentation of previous line
 
 if has('autocmd')
   filetype plugin indent on
@@ -113,34 +110,18 @@ nnoremap <Space> <Nop>
 let mapleader = "\<Space>"
 
 " Clean search (highlight)
-" noremap <leader>\ :noh<CR>
 nnoremap <silent> <leader>c :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 
-"  map ç key in ABNT keyboard to replace key in same position in us keyboard
-" nnoremap ç ;
-" nnoremap Ç :
+" map ç key in ABNT keyboard to replace key in same position in us keyboard
+nnoremap ç ;
+nnoremap Ç :
 
-"" Split
-" noremap <Leader>h :<C-u>split<CR>
-" noremap <Leader>v :<C-u>vsplit<CR>
+" Delete buffer
+noremap <leader>d :bd<CR>
 
-"" Close buffer
-" noremap <leader>c :bd<CR>
-
-"" Buffer nav
-" noremap <leader>z :bp<CR>
-" noremap <leader>q :bp<CR>
-" noremap <leader>x :bn<CR>
-" noremap <leader>w :bn<CR>
-
-"" Switching windows
-" noremap <C-j> <C-w>j
-" noremap <C-k> <C-w>k
-" noremap <C-l> <C-w>l
-" noremap <C-h> <C-w>h
-
-" Save file
-" nnoremap <leader>s :w<CR>
+" Buffer nav
+noremap <leader>q :bp<CR>
+noremap <leader>w :bn<CR>
 
 " Recover from accidental Ctrl-U
 " http://vim.wikia.com/wiki/VimTip436
@@ -177,33 +158,20 @@ if has('syntax') && !exists('g:syntax_on')
 endif
 
 " show absolute line numbers
-" set number
-
-" show the matching part of the pair for [] {} and ()
-" set showmatch
+set number
 
 " 'show' buffer on terminal title
-" set title
+set title
 
-" highlight column
-" set colorcolumn=79
-
-" color scheme
-" set background=dark
-" colorscheme SpacegrayEighties
+" color scheme settings
+" https://superuser.com/questions/399296/256-color-support-for-vim-background-in-tmux
+set t_ut=
+set termguicolors
+colorscheme base16-solarized-dark
+" colorscheme base16-solarflare
 " colorscheme base16-flat
 " colorscheme base16-materia
 " colorscheme base16-monokai
-
-" guioptions
-" http://vimdoc.sourceforge.net/htmldoc/options.html#'guioptions'
-" default is: guioptions=agimrLtT
-" set guioptions=agimt
-
-" font settings
-if has('gui_running')
-  set guifont=Noto\ Mono\ for\ Powerline\ 11
-endif
 
 " Allow color schemes to do bright colors without forcing bold.
 if &t_Co == 8 && $TERM !~# '^linux\|^Eterm'
@@ -216,13 +184,7 @@ endif
 
 " .py file configs
 autocmd Filetype python setlocal
-    \ tabstop=4             " set tabs to have 4 spaces
-    \ softtabstop=4
-    \ shiftwidth=4          " when using the >> or << commands, shift lines by 4 spaces
-    \ textwidth=79
-    \ expandtab            " expand tabs into spaces
-    \ fileformat=unix
-    \ breakindentopt=shift:4
+    \ colorcolumn=79
 
 " enable all Python syntax highlighting features
 " let python_highlight_all = 1
@@ -234,14 +196,16 @@ autocmd Filetype python setlocal
 "*****************************************************************************
 
 " .html file configs
-" autocmd Filetype html setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd Filetype html setlocal
+    \ tabstop=2 shiftwidth=2
 
 "*****************************************************************************
 "" vim  basic settings
 "*****************************************************************************
 
 " .vimrc file configs
-autocmd Filetype vim setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd Filetype vim setlocal
+    \ tabstop=2 shiftwidth=2
 
 "*****************************************************************************
 "" Plugin Settings
@@ -254,8 +218,8 @@ if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
 endif
 
 " ctrlp
-" let g:ctrlp_map= '<c-p>'
-" let g:ctrlp_cmd='CtrlP'
+let g:ctrlp_map= '<c-p>'
+let g:ctrlp_cmd='CtrlP'
 
 " YouCompleteMe
 " let g:ycm_python_binary_path = 'python'
