@@ -34,8 +34,8 @@ Plug 'chriskempson/base16-vim'
 Plug 'notpratheek/vim-luna'
 
 " airline = light powerlight
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " vim-autoformat
 " Plug 'Chiel92/vim-autoformat'
@@ -167,8 +167,8 @@ set title
 " https://superuser.com/questions/399296/256-color-support-for-vim-background-in-tmux
 set t_ut=
 set termguicolors
-colorscheme base16-solarized-dark
-" colorscheme base16-solarflare
+" colorscheme base16-solarized-dark
+colorscheme base16-solarflare
 " colorscheme base16-flat
 " colorscheme base16-materia
 " colorscheme base16-monokai
@@ -262,11 +262,11 @@ let g:ctrlp_cmd='CtrlP'
 " let g:tagbar_autofocus = 1 " move cursor to Tagbar when it opens
 
 " vim-airline
-" let g:airline_theme = 'base16_flat'
+let g:airline_theme = 'base16_flat'
+" let g:airline_theme = 'powerlineish'
+let g:airline_powerline_fonts = 1
 
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#left_sep = ' '
-" let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#enabled = 1
 
 " let g:airline#extensions#ycm#enabled = 1
 " let g:airline#extensions#ycm#error_symbol = 'E:'
