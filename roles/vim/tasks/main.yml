@@ -21,6 +21,20 @@
   become: True
   when: ansible_distribution == 'Fedora'
 
+- name: install vim related packages
+  dnf:
+    name:
+      # packages required by YouCompleteMe
+      - automake
+      - gcc
+      - gcc-c++
+      - kernel-devel
+      - cmake
+      - python-devel
+      - python3-devel
+    state: present
+  become: True
+  when: ansible_distribution == 'Fedora'
 
 # download and install vim-plug
 # https://github.com/junegunn/vim-plug

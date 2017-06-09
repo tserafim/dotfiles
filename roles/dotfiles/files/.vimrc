@@ -13,7 +13,7 @@
 call plug#begin('~/.vim/plugged')
 
 " Autocomplete
-" Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 " ctrlp
 Plug 'ctrlpvim/ctrlp.vim'
@@ -222,14 +222,12 @@ let g:ctrlp_map= '<c-p>'
 let g:ctrlp_cmd='CtrlP'
 
 " YouCompleteMe
-" let g:ycm_python_binary_path = 'python'
-" let g:ycm_autoclose_preview_window_after_insertion=1
-" let g:ycm_seed_identifiers_with_syntax =1
-" let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
-" let g:ycm_key_list_previous_completion = ['<S-TAB>', '<Up>']
+let g:ycm_python_binary_path = 'python'
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_seed_identifiers_with_syntax = 1 " enable completion with language keywords
 
-" map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-" map <leader>d :YcmCompleter GetDoc<CR>
+map <leader>G :YcmCompleter GoTo<CR>
+map <leader>g :YcmCompleter GetDoc<CR>
 
 " ultisnips
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
@@ -263,14 +261,12 @@ let g:ctrlp_cmd='CtrlP'
 
 " vim-airline
 let g:airline_theme = 'base16_flat'
-" let g:airline_theme = 'powerlineish'
 let g:airline_powerline_fonts = 1
-
 let g:airline#extensions#tabline#enabled = 1
 
-" let g:airline#extensions#ycm#enabled = 1
-" let g:airline#extensions#ycm#error_symbol = 'E:'
-" let g:airline#extensions#ycm#warning_symbol = 'W:'
+let g:airline_extensions = ['ctrlp']
+
+let g:airline#extensions#ctrlp#show_adjacent_modes = 0
 
 " let g:airline#extensions#syntastic#enabled = 1
 

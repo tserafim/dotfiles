@@ -9,4 +9,4 @@
     - .gitconfig
     - .zshrc
     - .zshenv
-      #- .vimrc
+    - .vimrc
