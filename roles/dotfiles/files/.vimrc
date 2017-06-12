@@ -37,6 +37,9 @@ Plug 'notpratheek/vim-luna'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" comments
+Plug 'tpope/vim-commentary'
+
 " vim-autoformat
 " Plug 'Chiel92/vim-autoformat'
 
@@ -264,7 +267,7 @@ let g:airline_theme = 'base16_flat'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
-let g:airline_extensions = ['ctrlp']
+let g:airline_extensions = ['ctrlp', 'tabline', 'virtualenv', 'whitespace']
 
 let g:airline#extensions#ctrlp#show_adjacent_modes = 0
 
