@@ -26,7 +26,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'honza/vim-snippets'
 
 " tagbar
-" Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 
 " colorschemes
 Plug 'tomasr/molokai'
@@ -259,19 +259,17 @@ map <leader>g :YcmCompleter GetDoc<CR>
 " noremap <leader>y :Autoformat<CR>
 
 " tagbar
-" nmap <silent> <F4> :TagbarToggle<CR>
-" let g:tagbar_autofocus = 1 " move cursor to Tagbar when it opens
+nnoremap <silent> <F4> :TagbarToggle<CR>
+let g:tagbar_autofocus = 1 " move cursor to Tagbar when it opens
+let g:tagbar_left = 1
 
 " vim-airline
 let g:airline_theme = 'base16_flat'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
-let g:airline_extensions = ['ctrlp', 'tabline', 'virtualenv', 'whitespace']
+let g:airline_extensions = ['ctrlp', 'tabline', 'tagbar', 'virtualenv', 'whitespace']
 
 let g:airline#extensions#ctrlp#show_adjacent_modes = 0
 
 " let g:airline#extensions#syntastic#enabled = 1
-
-" let g:airline#extensions#tagbar#enabled = 1
-" let g:airline#extensions#tagbar#flags = ''
