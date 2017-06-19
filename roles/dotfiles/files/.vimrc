@@ -19,7 +19,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'ctrlpvim/ctrlp.vim'
 
 " Syntax checking
-" Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 
 " snippetes
 " Plug 'SirVer/ultisnips'
@@ -239,19 +239,9 @@ map <leader>g :YcmCompleter GetDoc<CR>
 " let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 " let g:UltiSnipsEditSplit="vertical"
 
-" syntastic (recommended settings for beginners)
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_loc_list_height = 5
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_aggregate_errors = 1
-" let g:syntastic_python_checkers=['python', 'flake8']
-" let g:syntastic_sh_checkers=['shellcheck']
+" ale - Asynchronous Lint Engine
+let g:ale_echo_msg_format = '[%linter%] %severity% - %s'
+let g:ale_open_list = 1
 
 " vim-autoformat
 " let g:formatters_python= ['yapf']
@@ -266,10 +256,7 @@ let g:tagbar_left = 1
 " vim-airline
 let g:airline_theme = 'base16_flat'
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
 
-let g:airline_extensions = ['ctrlp', 'tabline', 'tagbar', 'virtualenv', 'whitespace']
+let g:airline_extensions = ['ale', 'ctrlp', 'tabline', 'tagbar', 'virtualenv']
 
 let g:airline#extensions#ctrlp#show_adjacent_modes = 0
-
-" let g:airline#extensions#syntastic#enabled = 1
