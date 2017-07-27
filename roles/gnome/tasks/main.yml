@@ -1,0 +1,7 @@
+---
+- name: install gnome extensions
+  dnf:
+    name:
+      - gnome-shell-extension-topicons-plus
+    state: present
+  become: True
