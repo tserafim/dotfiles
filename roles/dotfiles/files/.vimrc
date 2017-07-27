@@ -171,7 +171,7 @@ set title
 set t_ut=
 set termguicolors
 " colorscheme base16-solarized-dark
-colorscheme base16-solarflare
+colorscheme base16-solar-flare
 " colorscheme base16-flat
 " colorscheme base16-materia
 " colorscheme base16-monokai

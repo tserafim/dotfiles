@@ -9,6 +9,7 @@
   user: "{{ user }}" 
   roles:
     - fedora
+    - gnome
     - { role: cmprescott.chrome, become: yes }
     - dropbox
     - vim
