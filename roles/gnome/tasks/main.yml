@@ -3,5 +3,6 @@
   dnf:
     name:
       - gnome-shell-extension-topicons-plus
+      - gnome-shell-extension-openweather
     state: present
   become: True
