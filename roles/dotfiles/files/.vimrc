@@ -43,6 +43,10 @@ Plug 'tpope/vim-commentary'
 " vim-autoformat
 " Plug 'Chiel92/vim-autoformat'
 
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
 call plug#end()
 
 "*****************************************************************************
@@ -103,6 +107,9 @@ if v:version > 703 || v:version == 703 && has("patch541")
 endif
 
 set formatoptions+=r  " insert comment char after hittig enter on Insert mode
+
+" Increase speed with which git-gutter is updated
+set updatetime=500
 
 "*****************************************************************************
 "" Mapping
@@ -257,6 +264,9 @@ let g:tagbar_left = 1
 let g:airline_theme = 'base16_flat'
 let g:airline_powerline_fonts = 1
 
-let g:airline_extensions = ['ale', 'ctrlp', 'tabline', 'tagbar', 'virtualenv']
+let g:airline_extensions = ['ale', 'branch', 'ctrlp', 'tabline', 'tagbar', 'virtualenv']
 
 let g:airline#extensions#ctrlp#show_adjacent_modes = 0
+
+" git-gutter
+let g:gitgutter_map_keys = 0
