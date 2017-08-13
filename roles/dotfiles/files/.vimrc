@@ -111,6 +111,9 @@ set formatoptions+=r  " insert comment char after hittig enter on Insert mode
 " Increase speed with which git-gutter is updated
 set updatetime=500
 
+" When splitting, open new window on the right
+set splitright
+
 "*****************************************************************************
 "" Mapping
 "*****************************************************************************
