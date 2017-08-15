@@ -1,0 +1,9 @@
+---
+- name: install gnome extensions
+  dnf:
+    name:
+      - gnome-tweak-tool
+      - gnome-shell-extension-topicons-plus
+      - gnome-shell-extension-openweather
+    state: present
+  become: True

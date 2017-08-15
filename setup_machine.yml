@@ -1,0 +1,20 @@
+---
+- hosts: localhost
+  connection: local
+  vars:
+    user: "serafim"
+  environment:
+    http_proxy: http://user:password@server:port
+    https_proxy: http://user:password@server:port
+  user: "{{ user }}" 
+  roles:
+    - fedora
+    - gnome
+    - { role: cmprescott.chrome, become: yes }
+    - dropbox
+    - vim
+    - virtualbox
+    - wine
+    - zsh
+    - python
+    - dotfiles

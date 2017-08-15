@@ -1,0 +1,28 @@
+---
+- name: install zsh
+  dnf:
+    name: 
+      - zsh
+      - git
+      - powerline
+    state: present
+  become: True
+
+- name: clone oh-my-zsh
+  git:
+    repo: https://github.com/robbyrussell/oh-my-zsh.git
+    dest: ~/.oh-my-zsh
+    update: no
+
+- name: change user shell
+  user:
+    name: "{{ user }}"
+    shell: /bin/zsh
+  become: True
+
+- name: clone powerlevel9k theme
+# https://github.com/bhilburn/powerlevel9k
+  git:
+    repo: https://github.com/bhilburn/powerlevel9k.git
+    dest: ~/.oh-my-zsh/custom/themes/powerlevel9k
+    update: no

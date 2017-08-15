@@ -1,0 +1,28 @@
+---
+# https://www.virtualbox.org/wiki/Linux_Downloads
+
+- name: add repo file
+  get_url:
+    url: http://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo
+    dest: /etc/yum.repos.d/
+  become: True
+
+- name: install dependencies
+  dnf:
+    name:
+      - dkms
+    state: present
+  become: True
+
+- name: install VirtualBox
+  dnf:
+    name: VirtualBox-5.1
+    state: present
+  become: True
+
+- name: add user to vboxusers group
+  user:
+    name: "{{ user }}"
+    groups: vboxusers
+    append: yes
+  become: True

@@ -1,0 +1,15 @@
+---
+- name: upgrade fedora
+  dnf:
+    name: "*"
+    state: latest
+  become: True
+
+- name: install fedora packages
+  dnf:
+    name:
+      - git
+      - libselinux-python # needed for some ansible roles
+      - powerline
+    state: present
+  become: True

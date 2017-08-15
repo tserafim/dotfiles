@@ -1,22 +1,17 @@
-These are my dotfiles, based on [Kevin's dotfiles](https://github.com/kdeldycke/dotfiles)
-
-
-Update Ubuntu.
-
-Configure Python.
-
-Link files from dotfiles-linux folder, making backup of existing files.
-
-Run scripts from scripts folder.
+Setup machine using ansible. Installs packages and links dotfiles
 
 Install
 -------
 
-1. Get a copy of this repository.
+1. Install ansible using package manager (dnf, yum, apt,...)
+
+	$ sudo yum install ansible
+
+2. Get a copy of this repository.
 
     If git is installed:
 
-    	$ cd ~ && git clone https://github.com/tserafim/dotfiles.git .dotfiles
+        $ cd ~ && git clone --recursive https://github.com/tserafim/dotfiles.git .dotfiles
 
         $ cd .dotfiles
 
@@ -27,7 +22,7 @@ Install
     	$ wget -q0- https://github.com/tserafim/dotfiles/tarball/master | tar --strip-components=1 -xvz
 
 
-2. Run install script
+3. Run setup_machine playbook
 
-	    $ ./install.sh 
+	    $ ansible-playbook setup_machine.yml -K
 
