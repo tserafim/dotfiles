@@ -2,8 +2,28 @@
 - name: install gnome extensions
   dnf:
     name:
+      - chrome-gnome-shell
       - gnome-tweak-tool
       - gnome-shell-extension-topicons-plus
       - gnome-shell-extension-openweather
     state: present
+  become: True
+
+- name: install theme related packages
+  dnf:
+    name:
+      - arc-theme
+  become: True
+
+- name: add papirus icon repository
+  yum_repository:
+    name: Papirus icon theme repository
+    description: Papirus icon theme repository
+    baseurl: https://copr.fedorainfracloud.org/coprs/dirkdavidis/papirus-icon-theme/repo/fedora-26/dirkdavidis-papirus-icon-theme-fedora-26.repo
+  become: True
+
+- name: install papirus icon theme
+  dnf:
+    name:
+      - papirus-icon-theme
   become: True
