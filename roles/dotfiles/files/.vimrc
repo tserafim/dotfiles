@@ -251,7 +251,10 @@ map <leader>g :YcmCompleter GetDoc<CR>
 
 " ale - Asynchronous Lint Engine
 let g:ale_echo_msg_format = '[%linter%] %severity% - %s'
-let g:ale_open_list = 1
+
+let g:ale_linters = {
+      \ 'python': ['flake8'],
+      \}
 
 " vim-autoformat
 " let g:formatters_python= ['yapf']
