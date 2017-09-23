@@ -10,3 +10,4 @@
     - .zshrc
     - .zshenv
     - .vimrc
+    - .tmux.conf
