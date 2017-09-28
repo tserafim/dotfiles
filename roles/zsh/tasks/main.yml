@@ -12,7 +12,7 @@
   git:
     repo: https://github.com/robbyrussell/oh-my-zsh.git
     dest: ~/.oh-my-zsh
-    update: no
+    update: yes
 
 - name: change user shell
   user:
@@ -25,4 +25,18 @@
   git:
     repo: https://github.com/bhilburn/powerlevel9k.git
     dest: ~/.oh-my-zsh/custom/themes/powerlevel9k
-    update: no
+    update: yes
+
+# https://github.com/zsh-users/zsh-autosuggestions
+- name: clone zsh-autosuggestions
+  git:
+    repo: https://github.com/zsh-users/zsh-autosuggestions.git
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+    update: yes
+
+# https://github.com/zsh-users/zsh-syntax-highlighting.git
+- name: clone zsh-syntax-highlighting
+  git:
+    repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+    update: yes
