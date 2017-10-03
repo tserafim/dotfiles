@@ -141,6 +141,12 @@ noremap <leader>w :bn<CR>
 inoremap <C-U> <C-G>u<C-U>
 inoremap <C-W> <C-G>u<C-W>
 
+" easier split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 "*****************************************************************************
 "" Visual Settings
 "*****************************************************************************
