@@ -147,6 +147,12 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" line navigation
+nnoremap H 0
+noremap L $
+noremap J G
+noremap K gg
+
 "*****************************************************************************
 "" Visual Settings
 "*****************************************************************************
@@ -239,14 +245,15 @@ endif
 " ctrlp
 let g:ctrlp_map= '<c-p>'
 let g:ctrlp_cmd='CtrlP'
+let g:ctrlp_show_hidden = 0 " show hidden files
 
 " YouCompleteMe
 let g:ycm_python_binary_path = 'python'
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_seed_identifiers_with_syntax = 1 " enable completion with language keywords
 
-map <leader>G :YcmCompleter GoTo<CR>
-map <leader>g :YcmCompleter GetDoc<CR>
+map <leader>g :YcmCompleter GoTo<CR>
+map <leader>G :YcmCompleter GetDoc<CR>
 
 " ultisnips
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
