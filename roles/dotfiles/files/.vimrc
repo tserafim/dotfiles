@@ -47,6 +47,9 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
+" nerdtree
+Plug 'scrooloose/nerdtree'
+
 call plug#end()
 
 "*****************************************************************************
@@ -289,3 +292,8 @@ let g:airline#extensions#ctrlp#show_adjacent_modes = 0
 
 " git-gutter
 let g:gitgutter_map_keys = 0
+
+" nerdtree
+noremap <F3> :NERDTreeToggle<CR>
+let g:NERDTreeIgnore=['\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
+let g:NERDTreeShowHidden = 1
