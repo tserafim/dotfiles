@@ -16,10 +16,7 @@
   become: True
 
 - name: add papirus icon repository
-  yum_repository:
-    name: Papirus icon theme repository
-    description: Papirus icon theme repository
-    baseurl: https://copr.fedorainfracloud.org/coprs/dirkdavidis/papirus-icon-theme/repo/fedora-26/dirkdavidis-papirus-icon-theme-fedora-26.repo
+  command: dnf copr enable -y dirkdavidis/papirus-icon-theme
   become: True
 
 - name: install papirus icon theme
