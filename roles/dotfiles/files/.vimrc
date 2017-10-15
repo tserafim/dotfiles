@@ -248,7 +248,7 @@ endif
 " ctrlp
 let g:ctrlp_map= '<c-p>'
 let g:ctrlp_cmd='CtrlP'
-let g:ctrlp_show_hidden = 0 " show hidden files
+let g:ctrlp_show_hidden = 1 " show hidden files
 
 " YouCompleteMe
 let g:ycm_python_binary_path = 'python'
