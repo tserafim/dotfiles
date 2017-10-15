@@ -1,0 +1,17 @@
+---
+- name: install tmux
+  dnf:
+    name:
+      - tmux
+    state: present
+  become: True
+
+# https://github.com/tmux-plugins/tpm/blob/master/docs/automatic_tpm_installation.md
+- name: clone tpm
+  git:
+    repo: https://github.com/tmux-plugins/tpm.git
+    dest: ~/.tmux/plugins/tpm
+    update: yes
+
+- name: install tmux plugins
+  shell: ~/.tmux/plugins/tpm/bin/install_plugins
