@@ -133,7 +133,8 @@ nnoremap ç ;
 nnoremap Ç :
 
 " Delete buffer
-noremap <leader>d :bd<CR>
+noremap <leader>D :bd<CR>
+noremap <leader>d :bp<bar>sp<bar>bn<bar>bd<CR>
 
 " Buffer nav
 noremap <leader>q :bp<CR>
