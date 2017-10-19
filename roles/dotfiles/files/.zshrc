@@ -87,3 +87,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# I am testing the config below
+# Might move to some better place(e.g. '~/$ZSH_CUSTOM/my_config.zsh') if I like it
+# oh-my-zsh sets auto_pushd. I don't like it
+unsetopt auto_pushd
+
+# move cursor in insert mode
+bindkey "^[f" forward-word
+bindkey "^[b" backward-word
