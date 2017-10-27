@@ -133,7 +133,6 @@ nnoremap ç ;
 nnoremap Ç :
 
 " Delete buffer
-noremap <leader>D :bd<CR>
 noremap <leader>d :bp<bar>sp<bar>bn<bar>bd<CR>
 
 " Buffer nav
@@ -144,6 +143,13 @@ noremap <leader>w :bn<CR>
 " http://vim.wikia.com/wiki/VimTip436
 inoremap <C-U> <C-G>u<C-U>
 inoremap <C-W> <C-G>u<C-W>
+
+" split/window creation
+" nnoremap <leader>s :split<CR>
+nnoremap <leader>v :vsplit<CR>
+
+" close window
+noremap <leader>D :close<CR>
 
 " easier split navigation
 nnoremap <C-J> <C-W><C-J>
