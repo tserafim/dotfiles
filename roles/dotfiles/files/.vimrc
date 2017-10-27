@@ -261,6 +261,8 @@ let g:ctrlp_show_hidden = 1 " show hidden files
 let g:ycm_python_binary_path = 'python'
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_seed_identifiers_with_syntax = 1 " enable completion with language keywords
+let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<C-J>']
+let g:ycm_key_list_previous_completion = ['<S-TAB>', '<Up>', '<C-K>']
 
 map <leader>g :YcmCompleter GoTo<CR>
 map <leader>G :YcmCompleter GetDoc<CR>
