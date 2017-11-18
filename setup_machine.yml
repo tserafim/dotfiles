@@ -13,7 +13,6 @@
     - { role: cmprescott.chrome, become: yes }
     - dropbox
     - vim
-    - virtualbox
     - wine
     - zsh
     - tmux
