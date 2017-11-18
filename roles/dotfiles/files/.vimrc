@@ -294,8 +294,7 @@ let g:tagbar_autofocus = 1 " move cursor to Tagbar when it opens
 let g:tagbar_left = 1
 
 " vim-airline
-" let g:airline_theme = 'base16_flat'
-let g:airline_theme = 'dracula'
+let g:airline_theme = 'base16'
 let g:airline_powerline_fonts = 1
 
 let g:airline_extensions = ['ale', 'branch', 'ctrlp', 'tabline', 'tagbar', 'virtualenv']
