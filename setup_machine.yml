@@ -16,5 +16,6 @@
     - virtualbox
     - wine
     - zsh
+    - tmux
     - python
     - dotfiles
