@@ -33,6 +33,7 @@ Plug 'tomasr/molokai'
 Plug 'chriskempson/base16-vim'
 Plug 'notpratheek/vim-luna'
 Plug 'dracula/vim'
+Plug 'trevordmiller/nova-vim'
 
 " airline = light powerlight
 Plug 'vim-airline/vim-airline'
@@ -208,7 +209,8 @@ set termguicolors
 " colorscheme base16-flat
 " colorscheme base16-materia
 " colorscheme base16-monokai
-colorscheme base16-dracula
+" colorscheme base16-dracula
+colorscheme nova
 
 " Allow color schemes to do bright colors without forcing bold.
 if &t_Co == 8 && $TERM !~# '^linux\|^Eterm'
@@ -294,7 +296,7 @@ let g:tagbar_autofocus = 1 " move cursor to Tagbar when it opens
 let g:tagbar_left = 1
 
 " vim-airline
-let g:airline_theme = 'base16'
+" let g:airline_theme = 'base16'
 let g:airline_powerline_fonts = 1
 
 let g:airline_extensions = ['ale', 'branch', 'ctrlp', 'tabline', 'tagbar', 'virtualenv']
