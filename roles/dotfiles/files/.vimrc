@@ -34,9 +34,9 @@ Plug 'majutsushi/tagbar'
 " colorschemes
 Plug 'tomasr/molokai'
 Plug 'chriskempson/base16-vim'
-Plug 'notpratheek/vim-luna'
 Plug 'dracula/vim'
-Plug 'trevordmiller/nova-vim'
+Plug 'mhartington/oceanic-next'
+Plug 'joshdick/onedark.vim'
 
 " airline = light powerlight
 Plug 'vim-airline/vim-airline'
@@ -207,13 +207,10 @@ set title
 " https://superuser.com/questions/399296/256-color-support-for-vim-background-in-tmux
 set t_ut=
 set termguicolors
-" colorscheme base16-solarized-dark
-" colorscheme base16-solar-flare
-" colorscheme base16-flat
-" colorscheme base16-materia
-" colorscheme base16-monokai
-" colorscheme base16-dracula
-colorscheme nova
+" colorscheme dracula
+" colorscheme molokai
+" colorscheme OceanicNext
+colorscheme onedark
 
 " Allow color schemes to do bright colors without forcing bold.
 if &t_Co == 8 && $TERM !~# '^linux\|^Eterm'
