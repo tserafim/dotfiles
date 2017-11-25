@@ -15,8 +15,8 @@ call plug#begin('~/.vim/plugged')
 " Autocomplete
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
-" ctrlp
-Plug 'ctrlpvim/ctrlp.vim'
+" fzf.vim
+Plug 'junegunn/fzf.vim'
 
 " Syntax checking
 Plug 'w0rp/ale'
@@ -256,10 +256,25 @@ if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
   runtime! macros/matchit.vim
 endif
 
-" ctrlp
-let g:ctrlp_map= '<c-p>'
-let g:ctrlp_cmd='CtrlP'
-let g:ctrlp_show_hidden = 1 " show hidden files
+" fzf.vim
+nnoremap <C-P> :FZF<CR>
+let g:fzf_layout = {'down': '~25%'}
+
+" Customize fzf colors to match color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 
 " YouCompleteMe
 let g:ycm_python_binary_path = 'python'
@@ -299,9 +314,7 @@ let g:tagbar_left = 1
 " let g:airline_theme = 'base16'
 let g:airline_powerline_fonts = 1
 
-let g:airline_extensions = ['ale', 'branch', 'ctrlp', 'tabline', 'tagbar', 'virtualenv']
-
-let g:airline#extensions#ctrlp#show_adjacent_modes = 0
+let g:airline_extensions = ['ale', 'branch', 'tabline', 'tagbar', 'virtualenv']
 
 " git-gutter
 let g:gitgutter_map_keys = 0

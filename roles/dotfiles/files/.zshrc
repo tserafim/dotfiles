@@ -97,3 +97,11 @@ unsetopt auto_pushd
 # move cursor in insert mode
 bindkey "^[f" forward-word
 bindkey "^[b" backward-word
+
+# fzf fedora package installs shell fuzzy auto-completion and key bindings
+# but bindings are not enabled by default
+source /usr/share/fzf/shell/key-bindings.zsh
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"

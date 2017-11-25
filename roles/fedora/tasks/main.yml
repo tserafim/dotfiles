@@ -11,5 +11,7 @@
       - git
       - libselinux-python # needed for some ansible roles
       - powerline
+      - the_silver_searcher
+      - fzf # https://src.fedoraproject.org/rpms/fzf
     state: present
   become: True
