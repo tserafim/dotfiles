@@ -21,6 +21,9 @@ Plug 'ctrlpvim/ctrlp.vim'
 " Syntax checking
 Plug 'w0rp/ale'
 
+" Syntax definitions
+Plug 'vim-python/python-syntax'
+
 " snippetes
 " Plug 'SirVer/ultisnips'
 " Plug 'honza/vim-snippets'
@@ -226,7 +229,7 @@ autocmd Filetype python setlocal
     \ colorcolumn=79
 
 " enable all Python syntax highlighting features
-" let python_highlight_all = 1
+let python_highlight_all = 1
 
 " set wildignore=*.pyc
 
