@@ -94,6 +94,9 @@ source $ZSH/oh-my-zsh.sh
 # oh-my-zsh sets auto_pushd. I don't like it
 unsetopt auto_pushd
 
+# Do not add duplicate command in history
+setopt hist_ignore_all_dups
+
 # move cursor in insert mode
 bindkey "^[f" forward-word
 bindkey "^[b" backward-word
