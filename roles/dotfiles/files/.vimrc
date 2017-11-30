@@ -162,11 +162,6 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" line navigation
-nnoremap H 0
-noremap L $
-noremap J G
-noremap K gg
 
 "*****************************************************************************
 "" Visual Settings
