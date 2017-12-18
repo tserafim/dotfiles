@@ -133,6 +133,10 @@ let mapleader = "\<Space>"
 " Clean search (highlight)
 nnoremap <silent> <leader>c :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 
+" center screen on next/previous search result
+nnoremap n nzz
+nnoremap N Nzz
+
 " map ç key in ABNT keyboard to replace key in same position in us keyboard
 nnoremap ç ;
 nnoremap Ç :
