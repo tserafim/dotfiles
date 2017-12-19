@@ -37,6 +37,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'dracula/vim'
 Plug 'mhartington/oceanic-next'
 Plug 'joshdick/onedark.vim'
+Plug 'liuchengxu/space-vim-dark'
 
 " airline = light powerlight
 Plug 'vim-airline/vim-airline'
