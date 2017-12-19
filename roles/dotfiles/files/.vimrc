@@ -124,6 +124,16 @@ set updatetime=500
 set splitright
 
 "*****************************************************************************
+"" Autocmd Rules
+"*****************************************************************************
+" reload vimrc
+augroup reload-vimrc
+  autocmd!
+  autocmd BufWritePost .vimrc source %
+  autocmd BufWritePost .vimrc AirlineRefresh
+augroup END
+
+"*****************************************************************************
 "" Mapping
 "*****************************************************************************
 
