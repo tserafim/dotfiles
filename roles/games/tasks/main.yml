@@ -1,0 +1,28 @@
+---
+- name: add negativo17 repository
+  command: dnf config-manager --add-repo=https://negativo17.org/repos/fedora-nvidia.repo
+  become: True
+
+- name: install nvidia drivers
+  dnf:
+    name:
+      - nvidia-settings
+      - kernel-devel
+      - dkms-nvidia
+      - vulkan.i686
+      - nvidia-driver-libs.i686
+    state: present
+  become: True
+
+- name: Add Flathub repository for flatpak
+  command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+  become: True
+
+- name: Install Steam flatpak app
+  command: "flatpak install flathub {{ item }}"--from https://flathub.org/repo/appstream/com.valvesoftware.Steam.flatpakref
+  with_items:
+    - org.freedesktop.Platform
+    - com.valvesoftware.Steam
+
+- name: Install Discord flatpak app
+  command: flatpak install flathub com.discordapp.Discord
