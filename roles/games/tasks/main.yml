@@ -19,10 +19,7 @@
   become: True
 
 - name: Install Steam flatpak app
-  command: "flatpak install flathub {{ item }}"--from https://flathub.org/repo/appstream/com.valvesoftware.Steam.flatpakref
-  with_items:
-    - org.freedesktop.Platform
-    - com.valvesoftware.Steam
+  command: flatpak install -y flathub com.valvesoftware.Steam
 
 - name: Install Discord flatpak app
-  command: flatpak install flathub com.discordapp.Discord
+  command: flatpak install -y flathub com.discordapp.Discord
