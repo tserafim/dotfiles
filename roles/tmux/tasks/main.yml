@@ -12,6 +12,3 @@
     repo: https://github.com/tmux-plugins/tpm.git
     dest: ~/.tmux/plugins/tpm
     update: yes
-
-- name: install tmux plugins
-  shell: ~/.tmux/plugins/tpm/bin/install_plugins
