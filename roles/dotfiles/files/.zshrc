@@ -9,9 +9,6 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 export KEYTIMEOUT=1
 DEFAULT_USER=$USER
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir dir_writable vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(virtualenv status root_indicator background_jobs ssh vi_mode)
-# ZSH_THEME="powerlevel9k/powerlevel9k"
 ZSH_THEME="spaceship-prompt/spaceship"
 
 # Uncomment the following line to use case-sensitive completion.
