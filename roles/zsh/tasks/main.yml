@@ -27,11 +27,11 @@
     dest: ~/.oh-my-zsh/custom/themes/powerlevel9k
     update: yes
 
-- name: clone spaceship theme
-# https://github.com/denysdovhan/spaceship-zsh-theme
+- name: clone spaceship prompt
+# https://github.com/denysdovhan/spaceship-prompt
   git:
-    repo: https://github.com/denysdovhan/spaceship-zsh-theme.git
-    dest: ~/.oh-my-zsh/custom/themes/spaceship
+    repo: https://github.com/denysdovhan/spaceship-prompt.git
+    dest: ~/.oh-my-zsh/custom/themes/spaceship-prompt
     update: yes
 
 # https://github.com/zsh-users/zsh-autosuggestions
