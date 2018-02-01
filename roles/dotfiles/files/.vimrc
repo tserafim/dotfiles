@@ -23,6 +23,7 @@ Plug 'w0rp/ale'
 
 " Syntax definitions
 Plug 'vim-python/python-syntax'
+Plug 'pangloss/vim-javascript'
 
 " snippetes
 " Plug 'SirVer/ultisnips'
@@ -323,6 +324,7 @@ let g:tagbar_left = 1
 " vim-airline
 " let g:airline_theme = 'base16'
 let g:airline_powerline_fonts = 1
+let g:airline_skip_empty_sections = 1
 
 let g:airline_extensions = ['ale', 'branch', 'tabline', 'tagbar', 'virtualenv']
 
