@@ -14,6 +14,7 @@ call plug#begin('~/.vim/plugged')
 
 " Autocomplete
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'mattn/emmet-vim'
 
 " fzf.vim
 Plug 'junegunn/fzf.vim'
