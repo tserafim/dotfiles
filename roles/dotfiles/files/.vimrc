@@ -24,8 +24,9 @@ Plug 'w0rp/ale'
 " Syntax definitions
 Plug 'vim-python/python-syntax'
 Plug 'pangloss/vim-javascript'
+Plug 'hail2u/vim-css3-syntax'
 
-" snippetes
+" snippets
 " Plug 'SirVer/ultisnips'
 " Plug 'honza/vim-snippets'
 
@@ -40,7 +41,7 @@ Plug 'mhartington/oceanic-next'
 Plug 'joshdick/onedark.vim'
 Plug 'liuchengxu/space-vim-dark'
 
-" airline = light powerlight
+" airline = light powerline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
