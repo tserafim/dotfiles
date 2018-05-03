@@ -272,6 +272,7 @@ endif
 
 " fzf.vim
 nnoremap <C-P> :FZF<CR>
+map <leader>f :Ag<CR>
 let g:fzf_layout = {'down': '~25%'}
 
 " Customize fzf colors to match color scheme
