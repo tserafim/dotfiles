@@ -308,6 +308,9 @@ let g:ycm_semantic_triggers = {
 map <leader>g :YcmCompleter GoTo<CR>
 map <leader>G :YcmCompleter GetDoc<CR>
 
+" emmet
+let g:user_emmet_leader_key='<Tab>'
+
 " ultisnips
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 " let g:UltiSnipsExpandTrigger="<c-j>"
