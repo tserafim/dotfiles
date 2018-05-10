@@ -13,5 +13,6 @@
       - powerline
       - the_silver_searcher
       - fzf # https://src.fedoraproject.org/rpms/fzf
+      - nodejs
     state: present
   become: True

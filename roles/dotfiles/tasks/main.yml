@@ -11,3 +11,4 @@
     - .zshenv
     - .vimrc
     - .tmux.conf
+    - .tern-project

@@ -13,7 +13,7 @@
 call plug#begin('~/.vim/plugged')
 
 " Autocomplete
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --js-completer' }
 Plug 'mattn/emmet-vim'
 
 " fzf.vim
