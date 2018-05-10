@@ -124,8 +124,9 @@ set formatoptions+=r  " insert comment char after hittig enter on Insert mode
 " Increase speed with which git-gutter is updated
 set updatetime=500
 
-" When splitting, open new window on the right
+" When splitting, open new window on the right/below current window
 set splitright
+set splitbelow
 
 "*****************************************************************************
 "" Autocmd Rules
@@ -293,7 +294,7 @@ let g:fzf_colors =
 
 " YouCompleteMe
 let g:ycm_python_binary_path = 'python'
-let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_seed_identifiers_with_syntax = 1 " enable completion with language keywords
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<C-J>']
 let g:ycm_key_list_previous_completion = ['<S-TAB>', '<Up>', '<C-K>']
