@@ -303,6 +303,7 @@ let g:ycm_key_list_previous_completion = ['<S-TAB>', '<Up>', '<C-K>']
 " css https://github.com/Valloric/YouCompleteMe/issues/413
 let g:ycm_semantic_triggers = {
       \ 'css': ['re!^\s{4}', 're!:\s+'],
+      \ 'html': ['<', '"', '</', ' '],
       \}
 
 map <leader>g :YcmCompleter GoTo<CR>
