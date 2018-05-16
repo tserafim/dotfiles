@@ -60,6 +60,9 @@ Plug 'airblade/vim-gitgutter'
 " nerdtree
 Plug 'scrooloose/nerdtree'
 
+" surround
+Plug 'tpope/vim-surround'
+
 call plug#end()
 
 "*****************************************************************************
@@ -182,6 +185,9 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" Auto-insert closing parenthesis/brace
+inoremap ( ()<Left>
+inoremap { {}<Left>
 
 "*****************************************************************************
 "" Visual Settings
