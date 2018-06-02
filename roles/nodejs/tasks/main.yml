@@ -1,0 +1,26 @@
+---
+- name: install nodejs
+  dnf:
+    name:
+      - nodejs
+    state: present
+  become: True
+
+- name: create directory for global installations
+  file:
+    path: "{{ npm_global_dir }}"
+    state: directory
+
+- name: install global packages
+  npm:
+    name: "{{ item }}"
+    global: yes
+    state: present
+  with_items:
+    - cowsay
+    - prettier
+    - stylelint
+    - stylelint-config-standard
+  environment:
+    NPM_CONFIG_PREFIX: "{{ npm_global_dir }}"
+  become: False
