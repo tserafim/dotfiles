@@ -326,8 +326,16 @@ map <leader>G :YcmCompleter GetDoc<CR>
 let g:ale_echo_msg_format = '[%linter%] %severity% - %s'
 
 let g:ale_linters = {
+      \ 'css': ['stylelint'],
       \ 'python': ['flake8'],
       \}
+
+let g:ale_fixers = {
+      \ 'css': ['prettier'],
+      \ 'javascript': ['prettier'],
+      \}
+
+nmap <F5> <Plug>(ale_fix)
 
 " vim-autoformat
 " let g:formatters_python= ['yapf']

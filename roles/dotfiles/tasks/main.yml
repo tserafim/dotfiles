@@ -12,3 +12,4 @@
     - .vimrc
     - .tmux.conf
     - .tern-project
+    - .stylelintrc.json
