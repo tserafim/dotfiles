@@ -163,9 +163,12 @@ nnoremap Ç :
 " Delete buffer
 noremap <leader>d :bp<bar>sp<bar>bn<bar>bd<CR>
 
+" Save buffer
+noremap <leader>w :w<CR>
+
 " Buffer nav
-noremap <leader>q :bp<CR>
-noremap <leader>w :bn<CR>
+noremap <leader>z :bp<CR>
+noremap <leader>x :bn<CR>
 
 " Recover from accidental Ctrl-U
 " http://vim.wikia.com/wiki/VimTip436
