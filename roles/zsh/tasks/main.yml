@@ -40,3 +40,10 @@
     repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
     dest: ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
     update: yes
+
+# https://github.com/zdharma/zsh-diff-so-fancy
+- name: clone zsh-diff-so-fancy
+  git:
+    repo: https://github.com/zdharma/zsh-diff-so-fancy.git
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-diff-so-fancy
+    update: yes
