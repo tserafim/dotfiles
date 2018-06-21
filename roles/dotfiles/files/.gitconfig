@@ -1,6 +1,8 @@
 [user]
 	name = Thiago Serafim
 	email = thiago.serafim@gmail.com
+[include]
+	path = ~/.gitconfig.local
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
