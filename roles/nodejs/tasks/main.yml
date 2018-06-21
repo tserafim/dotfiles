@@ -21,6 +21,7 @@
     - prettier
     - stylelint
     - stylelint-config-standard
+    - git-open
   environment:
     NPM_CONFIG_PREFIX: "{{ npm_global_dir }}"
   become: False
