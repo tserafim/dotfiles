@@ -1,107 +1,36 @@
 # Inspired on https://github.com/paulirish/dotfiles
-#
-# oh-my-zsh template starts here
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+# Load zplugin - Zsh plugin manager
+source ~/.zplugin/bin/zplugin.zsh
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="spaceship-prompt/spaceship"
+# Load plugins
+zplugin load denysdovhan/spaceship-prompt
+zplugin load zsh-users/zsh-autosuggestions
+zplugin load zsh-users/zsh-syntax-highlighting
+zplugin load zdharma/zsh-diff-so-fancy
+zplugin ice pick"z.sh"
+zplugin load rupa/z
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+# Load oh-my-zsh plugins
+zplugin snippet OMZ::plugins/dnf/dnf.plugin.zsh
+zplugin snippet OMZ::plugins/git/git.plugin.zsh
+zplugin snippet OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh
+zplugin snippet OMZ::plugins/tmux/tmux.plugin.zsh
+zplugin snippet OMZ::plugins/vi-mode/vi-mode.plugin.zsh
+
+# Load oh-my-zsh core lib. Maybe move this to my own files?
+zplugin snippet OMZ::lib/history.zsh
+
+# Uncomment the following line to enable command auto-correction.
+ENABLE_CORRECTION="true"
+zplugin snippet OMZ::lib/correction.zsh
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
 HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
-
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  dnf
-  git
-  ssh-agent
-  tmux
-  vi-mode
-  z
-  zsh-autosuggestions
-  zsh-diff-so-fancy
-  zsh-syntax-highlighting
-)
-
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# source other dotfiles
-for file in ~/.{aliases,exports,extras}; do
-    [ -e "$file" ] && source $file;
-done
-unset file
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+zplugin snippet OMZ::lib/completion.zsh
 
 # I am testing the config below
 # Might move to some better place(e.g. '~/$ZSH_CUSTOM/my_config.zsh') if I like it
@@ -115,10 +44,13 @@ setopt hist_ignore_all_dups
 bindkey "^[f" forward-word
 bindkey "^[b" backward-word
 
+# source other dotfiles
+for file in ~/.{aliases,exports,extras}; do
+    [ -e "$file" ] && source $file;
+done
+unset file
+
 # fzf fedora package installs shell fuzzy auto-completion and key bindings
-# but bindings are not enabled by default
+# but bindings are not enabled by default. So we have to source the file
+# that holds the bindings
 source /usr/share/fzf/shell/key-bindings.zsh
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
-export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
