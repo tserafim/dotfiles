@@ -4,6 +4,7 @@
 source ~/.zplugin/bin/zplugin.zsh
 
 # Load plugins
+export SPACESHIP_ROOT=~/.zplugin/plugins/denysdovhan---spaceship-prompt
 zplugin load denysdovhan/spaceship-prompt
 zplugin load zsh-users/zsh-autosuggestions
 zplugin load zsh-users/zsh-syntax-highlighting
