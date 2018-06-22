@@ -13,5 +13,6 @@
       - powerline
       - the_silver_searcher
       - fzf # https://src.fedoraproject.org/rpms/fzf
+      - tldr # https://github.com/tldr-pages/tldr-python-client
     state: present
   become: True
