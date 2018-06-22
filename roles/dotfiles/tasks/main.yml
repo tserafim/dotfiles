@@ -5,10 +5,12 @@
     dest: ~/{{ item }}
     state: link
   with_items:
+    - .aliases
+    - .exports
+    - .extras
     - .gitignore
     - .gitconfig
     - .zshrc
-    - .zshenv
     - .vimrc
     - .tmux.conf
     - .tern-project
