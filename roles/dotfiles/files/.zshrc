@@ -51,7 +51,7 @@ bindkey "^[f" forward-word
 bindkey "^[b" backward-word
 
 # source other dotfiles
-for file in ~/.{aliases,exports,extras}; do
+for file in ~/.{aliases,exports,extras,local.env}; do
     [ -e "$file" ] && source $file;
 done
 unset file
