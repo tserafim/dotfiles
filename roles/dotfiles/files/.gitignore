@@ -1,6 +1,9 @@
 # List of file/patters that should be ignored globally
 # more info @ https://github.com/github/gitignore
 
+# git credentials/secrets
+.gitconfig.local
+
 ###########################################################
 # Linux
 ###########################################################

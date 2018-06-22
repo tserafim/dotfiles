@@ -1,11 +1,5 @@
 # Inspired on https://github.com/paulirish/dotfiles
-
-# source other dotfiles
-for file in ~/.{aliases,exports,extras}; do
-    [ -e "$file" ] && source $file;
-done
-unset file
-
+#
 # oh-my-zsh template starts here
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -75,6 +69,12 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
+# source other dotfiles
+for file in ~/.{aliases,exports,extras}; do
+    [ -e "$file" ] && source $file;
+done
+unset file
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
