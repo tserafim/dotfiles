@@ -20,6 +20,12 @@ zplugin snippet OMZ::plugins/vi-mode/vi-mode.plugin.zsh
 
 # Load oh-my-zsh core lib. Maybe move this to my own files?
 zplugin snippet OMZ::lib/history.zsh
+zplugin snippet OMZ::lib/directories.zsh
+zplugin snippet OMZ::lib/functions.zsh
+zplugin snippet OMZ::lib/git.zsh
+zplugin snippet OMZ::lib/grep.zsh
+zplugin snippet OMZ::lib/key-bindings.zsh
+zplugin snippet OMZ::lib/misc.zsh
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
