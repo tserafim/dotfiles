@@ -13,7 +13,6 @@ zplugin ice pick"z.sh"
 zplugin load rupa/z
 
 # Load oh-my-zsh plugins
-zplugin snippet OMZ::plugins/dnf/dnf.plugin.zsh
 zplugin snippet OMZ::plugins/git/git.plugin.zsh
 zplugin snippet OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh
 zplugin snippet OMZ::plugins/tmux/tmux.plugin.zsh
