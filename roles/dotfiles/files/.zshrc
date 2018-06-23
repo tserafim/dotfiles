@@ -22,7 +22,6 @@ zplugin snippet OMZ::plugins/vi-mode/vi-mode.plugin.zsh
 zplugin snippet OMZ::lib/directories.zsh
 zplugin snippet OMZ::lib/functions.zsh
 zplugin snippet OMZ::lib/git.zsh
-zplugin snippet OMZ::lib/grep.zsh
 zplugin snippet OMZ::lib/key-bindings.zsh
 zplugin snippet OMZ::lib/misc.zsh
 
