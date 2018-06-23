@@ -20,7 +20,6 @@ zplugin snippet OMZ::plugins/tmux/tmux.plugin.zsh
 zplugin snippet OMZ::plugins/vi-mode/vi-mode.plugin.zsh
 
 # Load oh-my-zsh core lib. Maybe move this to my own files?
-zplugin snippet OMZ::lib/history.zsh
 zplugin snippet OMZ::lib/directories.zsh
 zplugin snippet OMZ::lib/functions.zsh
 zplugin snippet OMZ::lib/git.zsh
@@ -50,6 +49,24 @@ setopt hist_ignore_all_dups
 # move cursor in insert mode
 bindkey "^[f" forward-word
 bindkey "^[b" backward-word
+
+# ========================================================================
+# stuff above this line comes from my migration from oh-my-zsh to zplugin
+# I am removing/reducing stuff above this line and putting it down here or
+# in my other dotfiles(aliases,...)
+
+# History configuration
+HISTFILE=$HOME/.zsh_history
+HISTORY_IGNORE="(exit|fg|history|ls|pwd)"
+HISTSIZE=50000                # number of lines to store in memory
+SAVEHIST=10000                # number of lines to store in $HISTFILE
+setopt extended_history       # record timestamp of command in HISTFILE
+setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt hist_ignore_dups       # ignore duplicated commands history list
+setopt hist_ignore_space      # ignore commands that start with space
+setopt hist_verify            # show command with history expansion to user before running it
+setopt inc_append_history     # add commands to HISTFILE in order of execution
+setopt share_history          # share command history data
 
 # source other dotfiles
 for file in ~/.{aliases,exports,extras,local.env}; do
