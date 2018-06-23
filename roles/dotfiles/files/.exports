@@ -1,3 +1,9 @@
+# zsh configuration
+
+# autocorrection prompt
+# https://www.refining-linux.org/archives/39-ZSH-Gem-4-Spell-checking-and-auto-correction.html
+export SPROMPT="Correct %R to %r? (yes, no, abort, edit) "
+
 export PATH=$HOME/.npm-global/bin:$PATH
 
 # FZF configuration

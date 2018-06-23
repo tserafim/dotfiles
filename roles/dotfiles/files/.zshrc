@@ -26,10 +26,6 @@ zplugin snippet OMZ::lib/grep.zsh
 zplugin snippet OMZ::lib/key-bindings.zsh
 zplugin snippet OMZ::lib/misc.zsh
 
-# Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
-zplugin snippet OMZ::lib/correction.zsh
-
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
 HYPHEN_INSENSITIVE="true"
@@ -53,6 +49,10 @@ bindkey "^[b" backward-word
 # stuff above this line comes from my migration from oh-my-zsh to zplugin
 # I am removing/reducing stuff above this line and putting it down here or
 # in my other dotfiles(aliases,...)
+
+# spell checking and autocorrection
+# https://www.refining-linux.org/archives/39-ZSH-Gem-4-Spell-checking-and-auto-correction.html
+setopt correct_all
 
 # History configuration
 HISTFILE=$HOME/.zsh_history
