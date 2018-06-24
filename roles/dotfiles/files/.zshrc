@@ -34,9 +34,6 @@ zplugin snippet OMZ::lib/completion.zsh
 
 # I am testing the config below
 # Might move to some better place(e.g. '~/$ZSH_CUSTOM/my_config.zsh') if I like it
-# oh-my-zsh sets auto_pushd. I don't like it
-unsetopt auto_pushd
-
 # Do not add duplicate command in history
 setopt hist_ignore_all_dups
 
@@ -48,6 +45,16 @@ bindkey "^[b" backward-word
 # stuff above this line comes from my migration from oh-my-zsh to zplugin
 # I am removing/reducing stuff above this line and putting it down here or
 # in my other dotfiles(aliases,...)
+
+# change directory by writing its name
+setopt auto_cd
+
+# make a cd push the old directory onto the directory stack
+# https://www.refining-linux.org/archives/55-ZSH-Gem-20-Changing-directories-the-pros-way.html
+setopt auto_pushd
+
+# disable beep on error
+setopt no_beep
 
 # spell checking and autocorrection
 # https://www.refining-linux.org/archives/39-ZSH-Gem-4-Spell-checking-and-auto-correction.html
