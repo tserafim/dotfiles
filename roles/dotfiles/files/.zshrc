@@ -30,7 +30,7 @@ zplugin snippet OMZ::lib/misc.zsh
 HYPHEN_INSENSITIVE="true"
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
-zplugin snippet OMZ::lib/completion.zsh
+# zplugin snippet OMZ::lib/completion.zsh
 
 # I am testing the config below
 # Might move to some better place(e.g. '~/$ZSH_CUSTOM/my_config.zsh') if I like it
@@ -45,6 +45,17 @@ bindkey "^[b" backward-word
 # stuff above this line comes from my migration from oh-my-zsh to zplugin
 # I am removing/reducing stuff above this line and putting it down here or
 # in my other dotfiles(aliases,...)
+
+## completion settings
+# Enable completion
+autoload -Uz compinit
+compinit
+
+# complete when cursor is in middle of word
+setopt complete_in_word
+
+# completion style definition
+zstyle ':completion:*' menu select      # enhanced selection of completion alternatives
 
 # change directory by writing its name
 setopt auto_cd
