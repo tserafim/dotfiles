@@ -85,7 +85,7 @@ setopt inc_append_history     # add commands to HISTFILE in order of execution
 setopt share_history          # share command history data
 
 # source other dotfiles
-for file in ~/.{aliases,exports,extras,local.env}; do
+for file in ~/.{aliases,exports,extras,functions,local.env}; do
     [ -e "$file" ] && source $file;
 done
 unset file

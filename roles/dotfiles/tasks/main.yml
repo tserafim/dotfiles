@@ -8,6 +8,7 @@
     - .aliases
     - .exports
     - .extras
+    - .functions
     - .gitignore
     - .gitconfig
     - .zshrc
