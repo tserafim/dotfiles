@@ -57,6 +57,8 @@ setopt complete_in_word
 # completion style definition
 zstyle ':completion:*' menu select      # enhanced selection of completion alternatives
 
+autoload -U colors && colors
+
 # change directory by writing its name
 setopt auto_cd
 
