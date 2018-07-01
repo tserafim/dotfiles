@@ -7,7 +7,6 @@ source ~/.zplugin/bin/zplugin.zsh
 export SPACESHIP_ROOT=~/.zplugin/plugins/denysdovhan---spaceship-prompt
 zplugin load denysdovhan/spaceship-prompt
 zplugin load zsh-users/zsh-autosuggestions
-zplugin load zsh-users/zsh-syntax-highlighting
 zplugin load zdharma/zsh-diff-so-fancy
 zplugin ice pick"z.sh"
 zplugin load rupa/z
@@ -37,9 +36,6 @@ COMPLETION_WAITING_DOTS="true"
 # Do not add duplicate command in history
 setopt hist_ignore_all_dups
 
-# move cursor in insert mode
-bindkey "^[f" forward-word
-bindkey "^[b" backward-word
 
 # ========================================================================
 # stuff above this line comes from my migration from oh-my-zsh to zplugin
@@ -85,6 +81,14 @@ setopt hist_ignore_space      # ignore commands that start with space
 setopt hist_verify            # show command with history expansion to user before running it
 setopt inc_append_history     # add commands to HISTFILE in order of execution
 setopt share_history          # share command history data
+
+# load more plugins
+zplugin load zsh-users/zsh-syntax-highlighting      # this should be sourced in the end of .zshrc
+zplugin load zsh-users/zsh-history-substring-search # this should be below syntax-highlighting
+
+# keybindings
+bindkey -M emacs '^P' history-substring-search-up   # ctrl-p history search
+bindkey -M emacs '^N' history-substring-search-down # ctrl-n history search
 
 # source other dotfiles
 for file in ~/.{aliases,exports,extras,functions,local.env}; do
