@@ -23,4 +23,11 @@ alias dnfu='sudo dnf update'       # Updates packages.
 alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 alias -g gp='| grep -i'
 
+# Misc
+alias cal='cal --monday --week'
+alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias disk_space='df -kHl'
+alias vim='vimx'
+alias v='vim'
+
 # vim:ft=zsh

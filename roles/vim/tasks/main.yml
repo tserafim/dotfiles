@@ -17,6 +17,7 @@
   dnf:
     name:
       - vim-X11
+      - vim-enhanced
     state: present
   become: True
   when: ansible_distribution == 'Fedora'
