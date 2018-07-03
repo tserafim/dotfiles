@@ -51,6 +51,8 @@ setopt complete_in_word
 
 # completion style definition
 zstyle ':completion:*' menu select      # enhanced selection of completion alternatives
+# ignore case completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
 
 autoload -U colors && colors
 
