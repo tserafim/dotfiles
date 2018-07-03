@@ -200,6 +200,7 @@ set showcmd
 set laststatus=2 " last windows will always have status line
 set ruler " Shows the current line number at the bottom right of the screen
 set wildmenu " Command-line completion
+set wildmode=list:longest " Show list and complete until point of ambiguity
 
 if !&scrolloff
   set scrolloff=3 " minimum number of lines to show above/below cursor
@@ -283,7 +284,7 @@ endif
 " fzf.vim
 nnoremap <C-P> :FZF<CR>
 map <leader>f :Ag<CR>
-let g:fzf_layout = {'down': '~25%'}
+let g:fzf_layout = {'down': '~100%'}
 
 " Customize fzf colors to match color scheme
 let g:fzf_colors =
@@ -336,6 +337,7 @@ let g:ale_linters = {
 let g:ale_fixers = {
       \ 'css': ['prettier'],
       \ 'javascript': ['prettier'],
+      \ 'python': ['black'],
       \}
 
 nmap <F5> <Plug>(ale_fix)
@@ -356,6 +358,9 @@ let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
 
 let g:airline_extensions = ['ale', 'branch', 'tabline', 'tagbar', 'virtualenv']
+
+let g:airline#extensions#tabline#fnamecollapse = 0 " do not collapse directory names
+let g:airline#extensions#tabline#fnamemod = ':t' " show only tail of filename
 
 " git-gutter
 let g:gitgutter_map_keys = 0
