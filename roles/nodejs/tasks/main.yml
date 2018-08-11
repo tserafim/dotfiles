@@ -19,7 +19,7 @@
   with_items:
     - cowsay
     - prettier
-    - stylelint
+    - stylelint # css linter
     - stylelint-config-standard
     - git-open
   environment:

@@ -12,6 +12,7 @@ zplugin ice pick"z.sh"
 zplugin load rupa/z
 
 # Load oh-my-zsh plugins
+zplugin snippet OMZ::plugins/extract/extract.plugin.zsh
 zplugin snippet OMZ::plugins/git/git.plugin.zsh
 zplugin snippet OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh
 zplugin snippet OMZ::plugins/tmux/tmux.plugin.zsh
@@ -53,6 +54,7 @@ setopt complete_in_word
 zstyle ':completion:*' menu select      # enhanced selection of completion alternatives
 # ignore case completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' rehash true      # automatically find new executables in $PATH.May be a problem if there $PATH has network folders
 
 autoload -U colors && colors
 

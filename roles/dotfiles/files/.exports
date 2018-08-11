@@ -25,3 +25,5 @@ source /usr/bin/virtualenvwrapper_lazy-3.sh
 
 # npm packages "global" install location
 export NPM_CONFIG_PREFIX=$HOME/.npm-global
+
+# vim:ft=zsh

@@ -189,8 +189,8 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Auto-insert closing parenthesis/brace
-inoremap ( ()<Left>
-inoremap { {}<Left>
+" inoremap ( ()<Left>
+" inoremap { {}<Left>
 
 "*****************************************************************************
 "" Visual Settings
@@ -254,6 +254,14 @@ autocmd Filetype python setlocal
 let python_highlight_all = 1
 
 " set wildignore=*.pyc
+
+"*****************************************************************************
+"" CSS  basic settings
+"*****************************************************************************
+
+" .cs file configs
+autocmd Filetype css setlocal
+    \ tabstop=2 shiftwidth=2
 
 "*****************************************************************************
 "" HTML  basic settings
@@ -331,12 +339,13 @@ let g:ale_echo_msg_format = '[%linter%] %severity% - %s'
 
 let g:ale_linters = {
       \ 'css': ['stylelint'],
+      \ 'javascript': ['eslint'],
       \ 'python': ['flake8'],
       \}
 
 let g:ale_fixers = {
       \ 'css': ['prettier'],
-      \ 'javascript': ['prettier'],
+      \ 'javascript': ['prettier' , 'eslint'],
       \ 'python': ['black'],
       \}
 
