@@ -9,7 +9,7 @@
       - nvidia-settings
       - kernel-devel
       - dkms-nvidia
-      - vulkan.i686
+      - vulkan
       - nvidia-driver-libs.i686
     state: present
   become: True
