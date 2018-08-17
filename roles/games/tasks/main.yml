@@ -1,16 +1,27 @@
 ---
-- name: add negativo17 repository
-  command: dnf config-manager --add-repo=https://negativo17.org/repos/fedora-nvidia.repo
+- name: install third party software repositories
+  dnf:
+    name:
+      - fedora-workstation-repositories
+    state: present
   become: True
 
+- name: enable nvidia repository
+  command: dnf config-manager --set-enabled rpmfusion-nonfree-nvidia-driver
+  become: True
+
+# https://rpmfusion.org/Howto/NVIDIA?highlight=%28CategoryHowto%29
+# wayland is disabled by default: see /etc/gdm/custom.conf
 - name: install nvidia drivers
   dnf:
     name:
-      - nvidia-settings
-      - kernel-devel
-      - dkms-nvidia
+      - xorg-x11-drv-nvidia
+      - akmod-nvidia
       - vulkan
-      - nvidia-driver-libs.i686
+      - xorg-x11-drv-nvidia-libs.i686
+      - vdpauinfo
+      - libva-vdpau-driver
+      - libva-utils
     state: present
   become: True
 
