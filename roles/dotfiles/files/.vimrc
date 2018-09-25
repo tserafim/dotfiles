@@ -24,6 +24,7 @@ Plug 'w0rp/ale'
 
 " Syntax definitions
 Plug 'vim-python/python-syntax'
+Plug 'vimjas/vim-python-pep8-indent'
 Plug 'pangloss/vim-javascript'
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
