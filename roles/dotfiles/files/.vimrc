@@ -28,6 +28,7 @@ Plug 'vimjas/vim-python-pep8-indent'
 Plug 'pangloss/vim-javascript'
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
+Plug 'pearofducks/ansible-vim'
 
 " snippets
 " Plug 'SirVer/ultisnips'
