@@ -4,6 +4,9 @@
 # https://www.refining-linux.org/archives/39-ZSH-Gem-4-Spell-checking-and-auto-correction.html
 export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r?$reset_color (Yes, No, Abort, Edit) "
 
+## PATH
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.poetry/bin:$PATH
 export PATH=$HOME/.npm-global/bin:$PATH
 
 # FZF configuration
@@ -22,8 +25,5 @@ export PROJECT_HOME=$HOME/workspace
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv-3
 source /usr/bin/virtualenvwrapper_lazy-3.sh
-
-# npm packages "global" install location
-export NPM_CONFIG_PREFIX=$HOME/.npm-global
 
 # vim:ft=zsh
