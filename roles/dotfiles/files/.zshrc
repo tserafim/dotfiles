@@ -1,7 +1,6 @@
 # Inspired on https://github.com/paulirish/dotfiles
 
 #Configure antigen
-ANTIGEN_CACHE=false
 ANTIGEN_COMPDUMP=$HOME/.zcompdump
 
 # Load antigen - Zsh plugin manager
@@ -15,19 +14,26 @@ source $HOME/.antigen/antigen.zsh
 # antigen use oh-my-zsh
 
 # oh-my-zsh plugins
+antigen bundle django
+antigen bundle docker
+antigen bundle docker-compose
 antigen bundle extract
 antigen bundle git
 antigen bundle ssh-agent
 antigen bundle tmux
-# antigen bundle vi-mode
+antigen bundle vi-mode
 
 # other bundles
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zdharma/zsh-diff-so-fancy
 antigen bundle rupa/z
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-history-substring-search
 
 # theme
 antigen theme denysdovhan/spaceship-prompt
+
+antigen apply
 
 # ========================================================================
 # stuff above this line comes from my migration from oh-my-zsh to zplugin to antigen
@@ -78,13 +84,11 @@ setopt hist_verify            # show command with history expansion to user befo
 setopt inc_append_history     # add commands to HISTFILE in order of execution
 setopt share_history          # share command history data
 
-# load more plugins
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-history-substring-search
-
 # keybindings
-bindkey -M emacs '^P' history-substring-search-up   # ctrl-p history search
-bindkey -M emacs '^N' history-substring-search-down # ctrl-n history search
+bindkey '^P' history-substring-search-up   # ctrl-p history search
+bindkey '^N' history-substring-search-down # ctrl-n history search
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
 
 # source other dotfiles
 for file in ~/.{aliases,exports,extras,functions,local.env}; do
@@ -96,5 +100,3 @@ unset file
 # but bindings are not enabled by default. So we have to source the file
 # that holds the bindings
 source /usr/share/fzf/shell/key-bindings.zsh
-
-antigen apply
