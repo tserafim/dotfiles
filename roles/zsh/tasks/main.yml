@@ -1,18 +1,24 @@
 ---
 - name: install zsh
   dnf:
-    name: 
+    name:
       - zsh
       - git
       - powerline
     state: present
   become: True
 
-- name: clone zplugin
-  git:
-    repo: https://github.com/zdharma/zplugin.git
-    dest: ~/.zplugin/bin
-    update: yes
+- name: make sure antigen folder exists
+  file:
+    path: ~/.antigen
+    mode: 0700
+    state: directory
+
+- name: install antigen
+  uri:
+    url: http://git.io/antigen
+    dest: ~/.antigen/antigen.zsh
+    follow_redirects: safe
 
 - name: change user shell
   user:

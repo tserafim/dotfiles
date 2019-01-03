@@ -1,44 +1,35 @@
 # Inspired on https://github.com/paulirish/dotfiles
 
-# Load zplugin - Zsh plugin manager
-source ~/.zplugin/bin/zplugin.zsh
+#Configure antigen
+ANTIGEN_CACHE=false
 
-# Load plugins
-export SPACESHIP_ROOT=~/.zplugin/plugins/denysdovhan---spaceship-prompt
-zplugin load denysdovhan/spaceship-prompt
-zplugin load zsh-users/zsh-autosuggestions
-zplugin load zdharma/zsh-diff-so-fancy
-zplugin ice pick"z.sh"
-zplugin load rupa/z
+# Load antigen - Zsh plugin manager
+source $HOME/.antigen/antigen.zsh
 
-# Load oh-my-zsh plugins
-zplugin snippet OMZ::plugins/extract/extract.plugin.zsh
-zplugin snippet OMZ::plugins/git/git.plugin.zsh
-zplugin snippet OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh
-zplugin snippet OMZ::plugins/tmux/tmux.plugin.zsh
-zplugin snippet OMZ::plugins/vi-mode/vi-mode.plugin.zsh
+# Load antigen bundles
 
-# Load oh-my-zsh core lib. Maybe move this to my own files?
-zplugin snippet OMZ::lib/functions.zsh
-zplugin snippet OMZ::lib/git.zsh
-zplugin snippet OMZ::lib/key-bindings.zsh
-zplugin snippet OMZ::lib/misc.zsh
+# oh-my-zsh libs
+# libs that I use from oh-my-zsh: lib/{completion,functions,git,key-bindings,misc}
+# maybe I should stop using them and use my own stuff?
+# antigen use oh-my-zsh
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-HYPHEN_INSENSITIVE="true"
-# Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
-# zplugin snippet OMZ::lib/completion.zsh
+# oh-my-zsh plugins
+antigen bundle extract
+antigen bundle git
+antigen bundle ssh-agent
+antigen bundle tmux
+# antigen bundle vi-mode
 
-# I am testing the config below
-# Might move to some better place(e.g. '~/$ZSH_CUSTOM/my_config.zsh') if I like it
-# Do not add duplicate command in history
-setopt hist_ignore_all_dups
+# other bundles
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zdharma/zsh-diff-so-fancy
+antigen bundle rupa/z
 
+# theme
+antigen theme denysdovhan/spaceship-prompt
 
 # ========================================================================
-# stuff above this line comes from my migration from oh-my-zsh to zplugin
+# stuff above this line comes from my migration from oh-my-zsh to zplugin to antigen
 # I am removing/reducing stuff above this line and putting it down here or
 # in my other dotfiles(aliases,...)
 
@@ -79,6 +70,7 @@ HISTSIZE=50000                # number of lines to store in memory
 SAVEHIST=10000                # number of lines to store in $HISTFILE
 setopt extended_history       # record timestamp of command in HISTFILE
 setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt hist_ignore_all_dups
 setopt hist_ignore_dups       # ignore duplicated commands history list
 setopt hist_ignore_space      # ignore commands that start with space
 setopt hist_verify            # show command with history expansion to user before running it
@@ -86,8 +78,8 @@ setopt inc_append_history     # add commands to HISTFILE in order of execution
 setopt share_history          # share command history data
 
 # load more plugins
-zplugin load zsh-users/zsh-syntax-highlighting      # this should be sourced in the end of .zshrc
-zplugin load zsh-users/zsh-history-substring-search # this should be below syntax-highlighting
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-history-substring-search
 
 # keybindings
 bindkey -M emacs '^P' history-substring-search-up   # ctrl-p history search
@@ -103,3 +95,5 @@ unset file
 # but bindings are not enabled by default. So we have to source the file
 # that holds the bindings
 source /usr/share/fzf/shell/key-bindings.zsh
+
+antigen apply
