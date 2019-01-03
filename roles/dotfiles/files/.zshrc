@@ -2,6 +2,7 @@
 
 #Configure antigen
 ANTIGEN_CACHE=false
+ANTIGEN_COMPDUMP=$HOME/.zcompdump
 
 # Load antigen - Zsh plugin manager
 source $HOME/.antigen/antigen.zsh
