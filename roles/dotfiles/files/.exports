@@ -23,7 +23,7 @@ export KEYTIMEOUT=1
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/workspace
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv-3
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
 source /usr/bin/virtualenvwrapper_lazy-3.sh
 
 # vim:ft=zsh
