@@ -17,7 +17,6 @@
     global: yes
     state: present
   with_items:
-    - cowsay
     - prettier
     - stylelint # css linter
     - stylelint-config-standard

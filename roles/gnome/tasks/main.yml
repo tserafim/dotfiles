@@ -4,8 +4,11 @@
     name:
       - chrome-gnome-shell
       - gnome-tweak-tool
+      - gnome-shell-extension-launch-new-instance
+      - gnome-shell-extension-no-topleft-hot-corner
       - gnome-shell-extension-topicons-plus
       - gnome-shell-extension-openweather
+      - gnome-shell-extension-user-theme
     state: present
   become: True
 

@@ -2,7 +2,6 @@
 - name: install python versions and environment tools
   dnf:
     name:
-      - python36
       - python3-virtualenvwrapper
     state: present
   become: True

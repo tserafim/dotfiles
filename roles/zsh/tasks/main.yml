@@ -4,7 +4,6 @@
     name:
       - zsh
       - git
-      - powerline
     state: present
   become: True
 
