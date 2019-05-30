@@ -31,8 +31,8 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'pearofducks/ansible-vim'
 
 " snippets
-" Plug 'SirVer/ultisnips'
-" Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 " tagbar
 Plug 'majutsushi/tagbar'
@@ -316,8 +316,8 @@ let g:fzf_colors =
 let g:ycm_python_binary_path = 'python'
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_seed_identifiers_with_syntax = 1 " enable completion with language keywords
-let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<C-J>']
-let g:ycm_key_list_previous_completion = ['<S-TAB>', '<Up>', '<C-K>']
+let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<C-N>']
+let g:ycm_key_list_previous_completion = ['<S-TAB>', '<Up>', '<C-P>']
 
 " Add YouCompleteMe semantic triggers
 " css https://github.com/Valloric/YouCompleteMe/issues/413
@@ -331,10 +331,10 @@ map <leader>G :YcmCompleter GetDoc<CR>
 
 " ultisnips
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-" let g:UltiSnipsExpandTrigger="<c-j>"
-" let g:UltiSnipsJumpForwardTrigger="<c-j>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-" let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsExpandTrigger="<c-l>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsEditSplit="vertical"
 
 " ale - Asynchronous Lint Engine
 let g:ale_echo_msg_format = '[%linter%] %severity% - %s'
