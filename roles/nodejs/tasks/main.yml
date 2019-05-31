@@ -21,6 +21,7 @@
     - stylelint # css linter
     - stylelint-config-standard
     - git-open
+    - grunt
   environment:
     NPM_CONFIG_PREFIX: "{{ npm_global_dir }}"
   become: False

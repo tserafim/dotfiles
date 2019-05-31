@@ -273,6 +273,9 @@ autocmd Filetype css setlocal
 autocmd Filetype html setlocal
     \ tabstop=2 shiftwidth=2
 
+autocmd Filetype htmldjango setlocal
+    \ tabstop=2 shiftwidth=2
+
 "*****************************************************************************
 "" vim  basic settings
 "*****************************************************************************
@@ -332,8 +335,8 @@ map <leader>G :YcmCompleter GetDoc<CR>
 " ultisnips
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<c-l>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsJumpForwardTrigger="<c-l>"
+let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 let g:UltiSnipsEditSplit="vertical"
 
 " ale - Asynchronous Lint Engine

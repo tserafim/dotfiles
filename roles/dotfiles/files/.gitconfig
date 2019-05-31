@@ -7,6 +7,7 @@
 	editor = vim
 	excludesfile = ~/.gitignore
 	pager = diff-so-fancy | less --tabs=4 -RFX
+	quotepath = off
 [color]
 	ui = true
 [color "diff-highlight"]
