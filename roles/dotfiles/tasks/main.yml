@@ -16,3 +16,4 @@
     - .tmux.conf
     - .tern-project
     - .stylelintrc.json
+    - .config/i3/config

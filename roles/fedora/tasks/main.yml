@@ -13,5 +13,11 @@
       - the_silver_searcher
       - fzf # https://src.fedoraproject.org/rpms/fzf
       - tldr # https://github.com/tldr-pages/tldr-python-client
+      - i3
+      - i3status
+      - dmenu
+      - i3lock
+      - xbacklight # change screen brightness
+      - feh # image viewer and cataloguer
     state: present
   become: True
