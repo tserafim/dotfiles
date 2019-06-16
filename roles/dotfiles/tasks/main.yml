@@ -1,4 +1,13 @@
 ---
+- name: make sure folders exist
+  file:
+    path: ~/{{ item }}
+    state: directory
+  with_items:
+    - .config
+    - .config/i3
+    - .config/i3blocks
+
 - name: symlink dot files in files folder
   file:
     src: "{{ role_path }}/files/{{ item }}"
@@ -18,3 +27,4 @@
     - .tern-project
     - .stylelintrc.json
     - .config/i3/config
+    - .config/i3blocks/config
