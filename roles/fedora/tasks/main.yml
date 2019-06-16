@@ -19,5 +19,6 @@
       - i3lock
       - xbacklight # change screen brightness
       - feh # image viewer and cataloguer
+      - sxhkd # simple X hotkey daemon
     state: present
   become: True

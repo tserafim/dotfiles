@@ -1,0 +1,4 @@
+# simple X hotkey daemon config
+# example bind
+super + i
+	termite -e htop
