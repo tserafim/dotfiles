@@ -1,0 +1,50 @@
+[options]
+font = Monospace 11
+mouse_autohide = true
+
+[colors]
+# Color profile: frontend-galaxy from tilix-themes
+# https://github.com/storm119/Tilix-Themes
+
+# special
+foreground      = #ffffff
+foreground_bold = #ffffff
+cursor          = #ffffff
+background      = #1d2837
+
+# black
+color0  = #000000
+color8  = #555555
+
+# red
+color1  = #f9555f
+color9  = #fa8c8f
+
+# green
+color2  = #21b089
+color10 = #35bb9a
+
+# yellow
+color3  = #fef02a
+color11 = #ffff55
+
+# blue
+color4  = #589df6
+color12 = #589df6
+
+# magenta
+color5  = #944d95
+color13 = #e75699
+
+# cyan
+color6  = #1f9ee7
+color14 = #3979bc
+
+# white
+color7  = #bbbbbb
+color15 = #ffffff
+
+# 20% background transparency (requires a compositor)
+background = rgba(63, 63, 63, 0.97)
+
+# vim: ft=dosini cms=#%s
