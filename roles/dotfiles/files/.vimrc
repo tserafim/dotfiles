@@ -305,6 +305,12 @@ nnoremap <C-P> :FZF<CR>
 map <leader>f :Ag<CR>
 let g:fzf_layout = {'down': '~100%'}
 
+" Customize Ag command
+command! -bang -nargs=* Ag
+  \ call fzf#vim#ag(<q-args>,
+  \                 '--hidden --ignore .git',
+  \                 <bang>0)
+
 " Customize fzf colors to match color scheme
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
