@@ -194,6 +194,9 @@ nnoremap <C-H> <C-W><C-H>
 " inoremap ( ()<Left>
 " inoremap { {}<Left>
 
+" Open vimrc
+map <leader>ev :edit<space>$MYVIMRC<CR>
+
 "*****************************************************************************
 "" Visual Settings
 "*****************************************************************************
