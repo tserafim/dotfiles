@@ -143,6 +143,9 @@ augroup reload-vimrc
   autocmd BufWritePost .vimrc AirlineRefresh
 augroup END
 
+" Reload sxhkd config when sxhkdrc is saved
+autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
+
 "*****************************************************************************
 "" Mapping
 "*****************************************************************************
