@@ -9,6 +9,7 @@
     - .config/i3blocks
     - .config/termite
     - .config/sxhkd
+    - .local/bin
 
 - name: symlink dot files in files folder
   file:
@@ -32,3 +33,11 @@
     - .config/i3blocks/config
     - .config/termite/config
     - .config/sxhkd/sxhkdrc
+
+- name: symlink scripts in .local/bin
+  file:
+    src: "{{ role_path }}/files/scripts/{{ item }}"
+    dest: ~/.local/bin/{{ item }}
+    state: link
+  with_items:
+    - teste
