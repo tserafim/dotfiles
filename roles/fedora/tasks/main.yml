@@ -17,6 +17,8 @@
       - i3status
       - dmenu
       - i3lock
+      - scrot # locker script
+      - ImageMagick # locker script
       - xbacklight # change screen brightness
       - feh # image viewer and cataloguer
       - sxhkd # simple X hotkey daemon

@@ -40,4 +40,5 @@
     dest: ~/.local/bin/{{ item }}
     state: link
   with_items:
-    - teste
+    - locker
+    - locker-icon.png
