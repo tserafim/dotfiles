@@ -301,8 +301,16 @@ if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
 endif
 
 " fzf.vim
-nnoremap <C-P> :FZF<CR>
-map <leader>f :Ag<CR>
+nnoremap <C-P> :Files<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>C :Commands<CR>
+nnoremap <leader>h :History<CR>
+nnoremap <leader>l :BLines<CR>
+nnoremap <leader>M :Maps<CR>
+nnoremap <leader>s :Filetypes<CR>
+nnoremap <leader>t :BTags<CR>
+nnoremap <leader>T :Tags<CR>
+nnoremap <leader>/ :Ag<CR>
 let g:fzf_layout = {'down': '~100%'}
 
 " Customize Ag command
