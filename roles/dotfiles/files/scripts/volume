@@ -1,4 +1,6 @@
 #!/bin/sh
+# Inspired by Luke Smith volume script
+# https://github.com/LukeSmithxyz/voidrice/blob/e4b3052965d52c97d527f7992a4c0f89e7d3f938/.local/bin/statusbar/volume
 
 # if there is a 2nd argument, store it in NUMBER
 # otherwise, NUMBER = 5
@@ -16,3 +18,21 @@ case "$1" in
     down) down ;;
 esac >/dev/null
 
+# Get amixer status
+volstat="$(amixer get Master)"
+
+# If Master control is off, print mute symbol and exit
+echo "$volstat" | grep "\[off\]" >/dev/null && printf "🔇\\n" && exit
+
+# Otherwise, get volume
+vol=$(echo "$volstat" | grep -o "\[[0-9]\+%\]" | sed "s/[^0-9]*//g;1q")
+
+if [ "$vol" -gt "70" ]; then
+	icon="🔊"
+elif [ "$vol" -lt "30" ]; then
+	icon="🔈"
+else
+	icon="🔉"
+fi
+
+printf "%s %s%%\\n" "$icon" "$vol"
