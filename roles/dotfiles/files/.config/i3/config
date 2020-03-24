@@ -35,9 +35,9 @@ bindsym $mod+d exec dmenu_run
 exec --no-startup-id dropbox start
 
 # change volume
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5%+
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5%-
-bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
+bindsym $super+period exec --no-startup-id "volume up 5"
+bindsym $super+comma exec --no-startup-id "volume down 5"
+bindsym $super+m exec --no-startup-id "volume toggle"
 
 # System state controls
 set $locker locker

@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# if there is a 2nd argument, store it in NUMBER
+# otherwise, NUMBER = 5
+NUMBER="${2:-5}"
+
+toggle() { amixer sset Master toggle ;}
+mute() { amixer sset Master mute ;}
+up() { amixer set Master "$NUMBER"%+ ;}
+down() { amixer sset Master "$NUMBER"%- ;}
+
+case "$1" in
+    toggle) toggle ;;
+    mute) mute ;;
+    up) up ;;
+    down) down ;;
+esac >/dev/null
+

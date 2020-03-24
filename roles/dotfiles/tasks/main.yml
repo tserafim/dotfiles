@@ -42,3 +42,4 @@
   with_items:
     - locker
     - locker-icon.png
+    - volume
