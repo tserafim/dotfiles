@@ -40,7 +40,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5%-
 bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
 
 # System state controls
-set $locker $HOME/.local/bin/locker
+set $locker locker
 
 set $system_state System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$system_state" {
