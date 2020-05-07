@@ -84,6 +84,11 @@ set autoread " automatically read file changed outside of vim
 " http://vimcasts.org/episodes/accessing-the-system-clipboard-from-vim/
 " http://vi.stackexchange.com/questions/84/how-can-i-copy-text-to-the-system-clipboard-from-vim
 if has('unnamedplus')
+  " X11-based systems have three clipboards which are independent:
+  "   primary: copy-on-select, can be pasted with the middle mouse button
+  "   secondary
+  "   clipboard: usually copy with Ctrl+C, paste with Ctrl+V
+  " below config tells vim to use 'primary' and 'clipboard' at the same time
   set clipboard=unnamed,unnamedplus
 endif
 
@@ -369,6 +374,7 @@ let g:ale_linters = {
       \}
 
 let g:ale_fixers = {
+      \ '*': ['remove_trailing_lines', 'trim_whitespace'],
       \ 'css': ['prettier'],
       \ 'javascript': ['prettier' , 'eslint'],
       \ 'python': ['black'],
@@ -403,3 +409,4 @@ let g:gitgutter_map_keys = 0
 noremap <F3> :NERDTreeToggle<CR>
 let g:NERDTreeIgnore=['\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
 let g:NERDTreeShowHidden = 1
+let g:NERDTreeQuitOnOpen = 1
