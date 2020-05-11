@@ -3,5 +3,6 @@
   dnf:
     name:
       - python3-virtualenvwrapper
+      - poetry
     state: present
   become: True
