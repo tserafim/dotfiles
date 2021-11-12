@@ -9,7 +9,7 @@
   dnf:
     name:
       - git
-      - libselinux-python # needed for some ansible roles
+      - python3-libselinux # needed for some ansible roles
       - the_silver_searcher
       - fzf # https://src.fedoraproject.org/rpms/fzf
       - tldr # https://github.com/tldr-pages/tldr-python-client
