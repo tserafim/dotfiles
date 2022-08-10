@@ -7,7 +7,7 @@
     - .config
     - .config/i3
     - .config/i3blocks
-    - .config/termite
+    - .config/alacritty
     - .config/sxhkd
     - .local/bin
 
@@ -31,7 +31,7 @@
     - .stylelintrc.json
     - .config/i3/config
     - .config/i3blocks/config
-    - .config/termite/config
+    - .config/alacritty/alacritty.yml
     - .config/sxhkd/sxhkdrc
 
 - name: symlink scripts in .local/bin

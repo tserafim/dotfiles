@@ -22,5 +22,6 @@
       - xbacklight # change screen brightness
       - feh # image viewer and cataloguer
       - sxhkd # simple X hotkey daemon
+      - alacritty # terminal emulator
     state: present
   become: True
